@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/9729ff5aa8.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Hills & Wheels</title>
+</head>
+
+<body>
+
+    <div class="loader">
+        <img src="img/LOGO.png" alt="">
+        <div>
+        </div>
+    </div>
+
+    <!--HEADER-->
+    <main>
+        <div id="content-header">
+            <header>
+                <div class="component">
+                    <img src="img/LOGO.png" alt="">
+                </div>
+                <nav>
+                    <ul>
+                        <a href="#content-header">
+                            <li>HOME</li>
+                            <div class="bar"></div>
+                        </a>
+                        <a href="#content-modal">
+                            <li>MODALIDADES</li>
+                            <div class="bar"></div>
+                        </a>
+                        <a href="#">
+                            <li>ATLETAS</li>
+                            <div class="bar"></div>
+                        </a>
+                        <a href="#">
+                            <li>EVENTOS</li>
+                            <div class="bar"></div>
+                        </a>
+                        <a href="#">
+                            <li>MEUS FEITOS</li>
+                            <div class="bar"></div>
+                        </a>
+                        <a href="login.html" class="icon-login"><i class="fa-solid fa-right-to-bracket"></i></a>
+                    </ul>
+                </nav>
+                <div class="component"> </div>
+            </header>
+            <div class="banner-text">
+                <h1> <i>THE</i> <br> BIKERS <br> SOCIETY</h1>
+            </div>
+        </div>
+
+        <!--MODALIDADES-->
+        <div id="content-modal">
+            <h1>MODALIDADES</h1>
+
+            <div class="modal">
+                <div class="img-modal m1">
+                </div>
+                <div class="info-modal">
+                    <h2>DOWNHILL</h2>
+                    <p>
+                        Downhill é uma forma do ciclismo que consiste em descer o mais rapidamente possível um dado percurso. Uma modalidade do mountain bike nascida na Califórnia na segunda metade da década de 1970.
+        
+                    </p>
+                </div>
+            </div>
+
+            <div class="modal">
+                <div class="info-modal">
+                    <h2>MTB</h2>
+                    <p>
+                        Mountain Bike, também conhecido como ciclismo de montanha, (sigla MTB) é uma modalidade de ciclismo que tem como objetivo pedalar em terrenos fora da estrada convencional.
+                    </p>
+                </div>
+                <div class="img-modal m2">
+                </div>
+            </div>
+
+            <div class="modal">
+                <div class="img-modal m3">
+                </div>
+                <div class="info-modal">
+                    <h2>SPEED</h2>
+                    <p>
+                        Speed é outra modalidade do ciclismo (também chamado de ciclismo de estrada). Como o nome sugere, nesse caso, a velocidade é muito importante, por isso as bikes têm uma aerodinâmica diferente e são mais leves.
+                    </p>
+                </div>
+            </div>
+
+            <div class="modal">
+                <div class="info-modal">
+                    <h2>BMX</h2>
+                    <p>
+                        O BMX surgiu graças à admiração de jovens norte-americanos pelo MotoCross. A vontade de imitar as manobras dos ídolos aliada à falta de equipamento fez com que bicicletas fossem utilizadas em pistas de terra. Nasceu, então, o Bicycle Moto Cross, ou simplesmente BMX.
+                    </p>
+                </div>
+                <div class="img-modal m4">
+                </div>
+            </div>
+
+            <div class="modal">
+                <div class="img-modal m5">
+                </div>
+                <div class="info-modal">
+                    <h2>BIKE TRIAL</h2>
+                    <p>
+                        O Bike trial é um esporte cujo objectivo é ultrapassar obstáculos, tanto naturais quanto artificiais. É uma modalidade do ciclismo derivada do trial de motocicleta. O bike trial é um esporte de habilidade, equilíbrio e de muita técnica.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+    </main>
+
+</body>
+
+</html>
+
+<script>
+
+    window, addEventListener('scroll', function () {
+        var nav = document.querySelector('nav')
+        nav.classList.toggle('sticky', window.scrollY > 100)
+    })
+    
+    function test(){
+        $(window).on('load', ()=> {
+            
+           
+        
+            setTimeout(()=>{  
+                $('.loader').fadeOut(1000);
+                $('main').fadeIn(1000)
+        }
+        ,1000)
+           
+        })
+
+       
+    }
+
+   test()
+  
+
+</script>

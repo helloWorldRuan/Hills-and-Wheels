@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+:root{
+    --text-color: #1b1b1b;
+    --yellow: #f3cb1a;
+    --orange: #f32c1a;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--text-color);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #f3cb1a;
+}
+
+*{
+    scroll-behavior: smooth;
+    user-select: none;
+    font-family: Oswald;
+}
+
+
+body{
+    background-color: #eaeaea;
+    font-family: Oswald;
+}
+
+.loader{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #f3cb1a;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader>div{
+    width: 300px;
+    height: 300px;
+    border: 10px solid var(--text-color);
+    border-top-color: var(--orange);
+    border-radius: 50%;
+    animation: spin 1.5s infinite ease;
+}
+
+.loader img{
+    position: absolute;
+    z-index: 10000000;
+    padding: 1rem;
+    background-color: #f3cb1a;
+    width: 500px;
+}
+
+
+@keyframes spin{
+    100%{
+        transform: rotate(360deg);
+
+    }
+} 
+
+
+main{
+    display: none;
+}
+
+#content-header{
+    background-image: url('../img/banner.png');
+    background-repeat: no-repeat;
+    background-position-y: -8rem;
+    background-color: #f3cb1a;
+    height: 90vh;
+}
+
+header{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 55rem;
+    align-items: center;
+}
+
+
+header .component{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    padding: 1rem;
+}
+
+.component img{
+    background-color: var(--orange);
+    padding: 1rem 1rem 1rem 2rem;
+    width: 150px;
+    position: relative;
+    left: -50px;
+}
+
+.banner-text{
+    display: flex;
+    justify-content: flex-end;
+    padding: 2rem;
+}
+
+.banner-text h1{
+    position: relative;
+    bottom: 50px;
+    width: 38%;
+    font-size: 100px;
+    font-weight: 700;
+    transform: rotate(-2deg);
+    animation: expand 6s ease;
+    animation-delay: 1s;
+}
+
+@keyframes expand{
+    0%{
+        letter-spacing: 0px;
+        transform: rotate(-2deg);
+    }
+    50%{
+        letter-spacing: 10px;
+        transform: rotate(-8deg);
+
+    }
+    100%{
+        letter-spacing: 0px;
+        transform: rotate(-2deg);
+    }
+}
+
+h1 i{
+    font-weight: 300;
+    font-style: italic;
+}
+
+nav{
+    position: fixed;
+    top: 60px;
+    background-color: #ffffff10;
+    backdrop-filter: blur(20px);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60vw;
+    border-radius: 500px;
+    transition: .3s ease;
+    z-index: 1;
+}
+
+nav.sticky{
+    background-color: var(--orange);
+    top: 0;
+    border-radius: 0px;
+}
+
+
+ul{
+    margin: 0 5px 0 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 12%;
+    height: 30px;
+    position: static;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: .2s ease;
+}
+
+.bar{
+    position: absolute;
+    bottom: 0;
+    transition: .2s linear;
+}
+
+.icon-login{
+    width: 5%;
+}
+
+a:hover{
+    color: #ffffff;
+    font-weight: 700;
+}
+
+a:hover .bar{
+    background-color: #eaeaea;
+    height: 2px;
+    width: 10%;
+}
+
+#content-modal{
+    background-image: url('../img/SKETCH.png');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding: 10rem 4rem;
+}
+
+#content-modal h1{
+    font-size: 100px;
+    margin-bottom: 4rem;
+}
+
+.modal{
+    padding: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.info-modal{
+    width: 40%;
+}
+
+.info-modal h2{
+    font-weight: 700;
+    font-size: 80px;
+    margin-bottom: 2rem;
+}
+
+.info-modal p{
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.img-modal{
+    background-color: #1b1b1b;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.m1{
+    background-image: url('../img/modal_downhill.png');
+    background-size: cover;
+}
+
+.m2{
+    background-image: url('../img/modal_mtb.png');
+    background-size: cover;
+}
+
+.m3{
+    background-image: url('../img/modal_speed.png');
+    background-size: cover;
+}
+
+.m4{
+    background-image: url('../img/modal_bmx.png');
+    background-size: cover;
+}
+
+.m5{
+    background-image: url('../img/modal_biketrial.png');
+    background-size: cover;
+    background-position-y: -1rem;
+}
+
+/*LOGIN*/
+.form{
+    background-image: url('../img/formLOGIN.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 27%;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form h1{
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.campo{
+    padding-left: 5px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: .5rem;
+}
+
+.campo input{
+    border: 0;
+    outline: 0 solid transparent;
+    border-radius: 3px;
+    padding: .5rem;
+    background-color: #ffdd98;
+    width: 90%;
+    transition: .1s ease;
+}
+
+.campo input:focus{
+    background-color: #ffd298;
+    box-shadow: 0 0 5px var(--orange);
+    outline: 1px solid var(--orange);
+}
+
+.btn{
+    margin-top: 1rem;
+    align-items: center;
+    padding: 0;
+}
+
+.btn input{
+    color: #eaeaea;
+    background-color: var(--orange);
+    text-transform: uppercase;
+    font-size: 15px;
+    width: 95%;
+}
+
+.btn input:hover{
+    background-color: #ff1500;
+    cursor: pointer;
+    font-weight: 700;
+}
