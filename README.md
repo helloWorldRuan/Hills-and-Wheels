@@ -1,2 +1,2 @@
 # Hills-and-Wheels
-Meu projeto pessoal desenvolvidono 1º semestre do curso de ADS, proposto pela renomada faculdade SPTECH.
+Meu projeto pessoal desenvolvido no 1º semestre do curso de ADS, proposto pela renomada faculdade SPTECH.
