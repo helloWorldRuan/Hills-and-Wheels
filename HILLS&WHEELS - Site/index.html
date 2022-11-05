@@ -9,20 +9,22 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/9729ff5aa8.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
     <title>Hills & Wheels</title>
 </head>
 
 <body>
 
-    <div class="loader">
+    <!-- <div class="loader">
         <img src="img/LOGO.png" alt="">
         <div>
         </div>
-    </div>
+    </div> -->
 
-    <!--HEADER-->
     <main>
-        <div id="content-header">
+
+        <!--HEADER-->
+        <section id="content-header">
             <header>
                 <div class="component">
                     <img src="img/LOGO.png" alt="">
@@ -37,7 +39,7 @@
                             <li>MODALIDADES</li>
                             <div class="bar"></div>
                         </a>
-                        <a href="#">
+                        <a href="#content-athlet">
                             <li>ATLETAS</li>
                             <div class="bar"></div>
                         </a>
@@ -57,20 +59,23 @@
             <div class="banner-text">
                 <h1> <i>THE</i> <br> BIKERS <br> SOCIETY</h1>
             </div>
-        </div>
+        </section>
 
         <!--MODALIDADES-->
-        <div id="content-modal">
+        <section id="content-modal">
             <h1>MODALIDADES</h1>
 
             <div class="modal">
-                <div class="img-modal m1">
+                <div class="img-modal">
+                    <img src="img/modal_downhill.png" alt="">
                 </div>
                 <div class="info-modal">
                     <h2>DOWNHILL</h2>
                     <p>
-                        Downhill é uma forma do ciclismo que consiste em descer o mais rapidamente possível um dado percurso. Uma modalidade do mountain bike nascida na Califórnia na segunda metade da década de 1970.
-        
+                        Downhill é uma forma do ciclismo que consiste em descer o mais rapidamente possível um dado
+                        percurso. Uma modalidade do mountain bike nascida na Califórnia na segunda metade da década de
+                        1970.
+
                     </p>
                 </div>
             </div>
@@ -79,20 +84,26 @@
                 <div class="info-modal">
                     <h2>MTB</h2>
                     <p>
-                        Mountain Bike, também conhecido como ciclismo de montanha, (sigla MTB) é uma modalidade de ciclismo que tem como objetivo pedalar em terrenos fora da estrada convencional.
+                        Mountain Bike, também conhecido como ciclismo de montanha, (sigla MTB) é uma modalidade de
+                        ciclismo que tem como objetivo pedalar em terrenos fora da estrada convencional.
                     </p>
                 </div>
-                <div class="img-modal m2">
+                <div class="img-modal">
+                    <img src="img/modal_mtb.png" alt="">
                 </div>
             </div>
 
             <div class="modal">
-                <div class="img-modal m3">
+                <div class="img-modal">
+                    <img src="img/modal_speed.png" alt="">
+
                 </div>
                 <div class="info-modal">
                     <h2>SPEED</h2>
                     <p>
-                        Speed é outra modalidade do ciclismo (também chamado de ciclismo de estrada). Como o nome sugere, nesse caso, a velocidade é muito importante, por isso as bikes têm uma aerodinâmica diferente e são mais leves.
+                        Speed é outra modalidade do ciclismo (também chamado de ciclismo de estrada). Como o nome
+                        sugere, nesse caso, a velocidade é muito importante, por isso as bikes têm uma aerodinâmica
+                        diferente e são mais leves.
                     </p>
                 </div>
             </div>
@@ -101,57 +112,135 @@
                 <div class="info-modal">
                     <h2>BMX</h2>
                     <p>
-                        O BMX surgiu graças à admiração de jovens norte-americanos pelo MotoCross. A vontade de imitar as manobras dos ídolos aliada à falta de equipamento fez com que bicicletas fossem utilizadas em pistas de terra. Nasceu, então, o Bicycle Moto Cross, ou simplesmente BMX.
+                        O BMX surgiu graças à admiração de jovens norte-americanos pelo MotoCross. A vontade de imitar
+                        as manobras dos ídolos aliada à falta de equipamento fez com que bicicletas fossem utilizadas em
+                        pistas de terra. Nasceu, então, o Bicycle Moto Cross, ou simplesmente BMX.
                     </p>
                 </div>
-                <div class="img-modal m4">
+                <div class="img-modal">
+                    <img src="img/modal_bmx.png" alt="">
+
                 </div>
             </div>
 
             <div class="modal">
-                <div class="img-modal m5">
+                <div class="img-modal">
+                    <img src="img/modal_biketrial.png" alt="">
                 </div>
                 <div class="info-modal">
                     <h2>BIKE TRIAL</h2>
                     <p>
-                        O Bike trial é um esporte cujo objectivo é ultrapassar obstáculos, tanto naturais quanto artificiais. É uma modalidade do ciclismo derivada do trial de motocicleta. O bike trial é um esporte de habilidade, equilíbrio e de muita técnica.
+                        O Bike trial é um esporte cujo objectivo é ultrapassar obstáculos, tanto naturais quanto
+                        artificiais. É uma modalidade do ciclismo derivada do trial de motocicleta. O bike trial é um
+                        esporte de habilidade, equilíbrio e de muita técnica.
                     </p>
                 </div>
             </div>
 
-        </div>
+        </section>
 
+        <!--ATLETAS-->
+        <section id="content-athlet">
+            <div class="title">
+                <h2>THE BEST</h2>
+                <h1>ATLETAS</h1>
+            </div>
+            <div class="arrows">
+                <button class="arrow-left control"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="arrow-right control"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <div class="slider-atlhet">
+                <div class="athlet">
+                    <img class="item current-item" src="img/CARD_FABIO.png" alt="">
+                    <img class="item current-item" src="img/CARD_AVANCINI.png" alt="">
+                    <img class="item current-item" src="img/CARD-PRISCILA.png" alt="">
+                    <img class="item current-item" src="img/CARD-JONAS.png" alt="">
+                    <img class="item current-item" src="img/CARD-DANNY.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!--FOOTER-->
+        <footer>
+            <div class="img_social">
+                <img src="img/grungeLOGO.png" alt="">
+                <div class="social">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="content-topics">
+                <div class="topic">
+                    <h1>RECURSOS</h1>
+                    <a href="#">Bikers Ranking</a>
+                    <a href="#">Meus feitos</a>
+                    <a href="#">Galeria</a>
+                </div>
+                <div class="topic">
+                    <h1>REDES</h1>
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">Whatsapp</a>
+                </div>
+                <div class="topic">
+                    <h1>POLÍTICAS</h1>
+                    <a href="#">Documentação</a>
+                    <a href="#">Termos de uso</a>
+                    <a href="https://github.com/helloWorldRuan/Hills-and-Wheels" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="copy">
+                <span>Todos os direitos reservados &copy; Copyright</span>
+                <p>Developed by <b>helloWorldRuan</b></p>
+            </div>
+        </footer>
 
     </main>
 
 </body>
 
 </html>
-
 <script>
+    const controls = document.querySelectorAll('.control')
+    const items = document.querySelectorAll('.item')
+    const maxItems = items.length
+    let currentItem = 0
 
-    window, addEventListener('scroll', function () {
-        var nav = document.querySelector('nav')
-        nav.classList.toggle('sticky', window.scrollY > 100)
-    })
-    
-    function test(){
-        $(window).on('load', ()=> {
+
+    controls.forEach(control => {
+        control.addEventListener('click', () => {
+            const isLeft = control.classList.contains('arrow-left')
+
+            if (isLeft){
+                currentItem -= 1
+            }
+            else{
+                currentItem += 1
+            }
+
+            if (currentItem >= maxItems){
+                currentItem = 0
+            }
+
+            if (currentItem < 0){
+                currentItem = maxItems - 1
+            }
+
+            items.forEach(item => 
+            item.classList.remove('current-item'))
+
+            items[currentItem].scrollIntoView({
+                inline: 'center',
+                behavior: 'smooth',
+                block: 'nearest'
+            })
+
+            console.log("control", isLeft, currentItem, maxItems)
+
+            items[currentItem].classList.add('current-item')
             
-           
-        
-            setTimeout(()=>{  
-                $('.loader').fadeOut(1000);
-                $('main').fadeIn(1000)
-        }
-        ,1000)
-           
         })
-
-       
-    }
-
-   test()
-  
-
+    })
 </script>

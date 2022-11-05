@@ -18,17 +18,17 @@
     justify-content: flex-start;
 }
 
-a {
+#home-event a {
     z-index: 100000;
     padding: 1.2rem 0rem;
     width: auto;
 }
 
-a img {
+#home-event a img {
     width: 150px;
 }
 
-.title {
+.title-event {
     color: white;
     margin-top: 5rem;
     display: flex;
@@ -39,12 +39,12 @@ a img {
     z-index: 100000;
 }
 
-.title h1 {
+.title-event h1 {
     font-weight: 700;
     font-size: 100px;
 }
 
-.title h2 {
+.title-event h2 {
     letter-spacing: .5px;
     font-size: 20px;
 }
@@ -92,31 +92,55 @@ a img {
 }
 
 .photo{
-    background-image: url('../img/cardMTB.png');
-    background-size: cover;
-    background-position: center;
-    width: 80%;
+    width: 100%;
     height: 150px;
-    padding: 1rem;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
     transition: .5s ease;
 }
 
-.photo:hover{
-    width: 90%;
+.photo img{
+    min-width: 100%;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+    transition: .5s ease;
 }
 
+.photo img:hover{
+    height: 160px;
+    object-position: bottom;
+    transform: scale(1.05);
+}
 
+.photo:hover{
+    height: 160px;
 
-.photo h1{
+}
+
+.title-card{
+    width: 100%;
+    position: relative;
+    bottom: 50px;
+}
+
+.card h1{
+    width: fit-content;
+    background-color: #0000001e;
+    backdrop-filter: blur(5px);
+    text-align: start;
+    padding: 5px;
     color: white;
     font-size: 20px;
     font-weight: 700;
 }
 
 .info-box{
+    position: relative;
+    bottom: 1.5rem;
     padding: 1rem;
     width: 90%;
     display: flex;
@@ -270,8 +294,9 @@ select{
 }
 
 .info-event .modal-text{
-    letter-spacing: 5px;
-    font-size: 30px;
+    letter-spacing: 1px;
+    font-weight: 800;
+    font-size: 20px;
     color: #736C4A;
 }
 
