@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/events.css">
     <script src="https://kit.fontawesome.com/9729ff5aa8.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
     <title>Hills & Wheels</title>
 </head>
 
@@ -100,6 +101,7 @@
         </div>
     </section>
     
+    <!--EVENTOS-LISTA-->
     <section id="events">
         <div class="find-event">
             <h1>Encontre eventos por interesse</h1>
@@ -200,6 +202,7 @@
             </div>
         </div>
     </section>
+
     <!--FOOTER-->
     <footer>
         <div class="img_social">
@@ -240,3 +243,17 @@
 </body>
 
 </html>
+
+<script>
+    ScrollReveal().reveal('.event',{
+        distance: '350px',
+        opacity: .1,
+        duration: 500
+    })
+    ScrollReveal().reveal('.card',{
+        distance: '50px',
+        opacity: 0,
+        duration: 500,
+        interval: 200
+    })
+</script>

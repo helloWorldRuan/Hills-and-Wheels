@@ -10,16 +10,17 @@
     <script src="https://kit.fontawesome.com/9729ff5aa8.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="js/index.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <title>Hills & Wheels</title>
 </head>
 
 <body>
 
-    <!-- <div class="loader">
+    <div class="loader">
         <img src="img/LOGO.png" alt="">
         <div>
         </div>
-    </div> -->
+    </div>
 
     <main>
 
@@ -63,7 +64,7 @@
 
         <!--MODALIDADES-->
         <section id="content-modal">
-            <h1>MODALIDADES</h1>
+            <h1 class="title_modal">MODALIDADES</h1>
 
             <div class="modal">
                 <div class="img-modal">
@@ -213,23 +214,23 @@
         control.addEventListener('click', () => {
             const isLeft = control.classList.contains('arrow-left')
 
-            if (isLeft){
+            if (isLeft) {
                 currentItem -= 1
             }
-            else{
+            else {
                 currentItem += 1
             }
 
-            if (currentItem >= maxItems){
+            if (currentItem >= maxItems) {
                 currentItem = 0
             }
 
-            if (currentItem < 0){
+            if (currentItem < 0) {
                 currentItem = maxItems - 1
             }
 
-            items.forEach(item => 
-            item.classList.remove('current-item'))
+            items.forEach(item =>
+                item.classList.remove('current-item'))
 
             items[currentItem].scrollIntoView({
                 inline: 'center',
@@ -240,7 +241,19 @@
             console.log("control", isLeft, currentItem, maxItems)
 
             items[currentItem].classList.add('current-item')
-            
+
         })
+    })
+
+
+    ScrollReveal().reveal('.title_modal', {
+        distance: '550px',
+        opacity: .1,
+        duration: 1000
+    })
+    ScrollReveal().reveal('.modal', {
+        distance: '550px',
+        opacity: .1,
+        duration: 1000
     })
 </script>
