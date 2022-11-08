@@ -16,11 +16,11 @@
 
 <body>
 
-    <div class="loader">
+    <!-- <div class="loader">
         <img src="img/LOGO.png" alt="">
         <div>
         </div>
-    </div>
+    </div> -->
 
     <main>
 
@@ -150,9 +150,22 @@
                 <button class="arrow-left control"><i class="fa-solid fa-arrow-left"></i></button>
                 <button class="arrow-right control"><i class="fa-solid fa-arrow-right"></i></button>
             </div>
+            <div class="modal-video" onclick="closeVideo()">
+                <button id="close_button">X</button>
+                <iframe id="fabio_video" width="0" height="0"
+                    src="https://www.youtube.com/embed/Jk7rliZpuSs?autoplay=0&mute=1&controls=1"
+                    title="Urban Freeride Lives 3 - Fabio Wibmer" frameborder="0"
+                    allow="accelerometer; autoplay:; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+    
+
+            </div>
             <div class="slider-atlhet">
                 <div class="athlet">
-                    <img class="item current-item" src="img/CARD_FABIO.png" alt="">
+                    <img onclick="openVideo()" class="item current-item" src="img/CARD_FABIO.png" alt="">
                     <img class="item current-item" src="img/CARD_AVANCINI.png" alt="">
                     <img class="item current-item" src="img/CARD-PRISCILA.png" alt="">
                     <img class="item current-item" src="img/CARD-JONAS.png" alt="">
@@ -205,7 +218,8 @@
 </html>
 <script>
     const controls = document.querySelectorAll('.control')
-    const items = document.querySelectorAll('.item')
+    const items = document.querySelectorAll('.item');
+    const video = document.querySelectorAll(".modal-video");
     const maxItems = items.length
     let currentItem = 0
 
@@ -246,13 +260,16 @@
     })
 
 
+
+
     ScrollReveal().reveal('.title_modal', {
-        distance: '550px',
+        distance: '200px',
         opacity: .1,
         duration: 1000
     })
+
     ScrollReveal().reveal('.modal', {
-        distance: '550px',
+        distance: '600px',
         opacity: .1,
         duration: 1000
     })
