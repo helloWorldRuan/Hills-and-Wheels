@@ -150,26 +150,32 @@
                 <button class="arrow-left control"><i class="fa-solid fa-arrow-left"></i></button>
                 <button class="arrow-right control"><i class="fa-solid fa-arrow-right"></i></button>
             </div>
-            <div class="modal-video" onclick="closeVideo()">
+
+            <div id="modal-video" onclick="closeVideo()">
                 <button id="close_button">X</button>
-                <iframe id="fabio_video" width="0" height="0"
-                    src="https://www.youtube.com/embed/Jk7rliZpuSs?autoplay=0&mute=1&controls=1"
-                    title="Urban Freeride Lives 3 - Fabio Wibmer" frameborder="0"
-                    allow="accelerometer; autoplay:; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
+
+                <iframe width="0" height="0" src="https://www.youtube.com/embed/Jk7rliZpuSs?mute=1&rel=0&loop=1" title="Fabio Wibmer" frameborder="0"allow="accelerometer; autoplay:; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe>
+
+                <iframe width="0" height="0" src="https://www.youtube.com/embed/83IUoeHCyoo?mute=1&rel=0&loop=1" title="Henrique Avancini" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe width="0" height="0" src="https://www.youtube.com/embed/c-TKhZMnBAU?mute=1&rel=0&loop=1" title="Priscilla Stevaux" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe width="0" height="0" src="https://www.youtube.com/embed/49PQhWC6JnA?mute=1&rel=0&loop=1" title="Jonas Vingegaard" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe width="0" height="0" src="https://www.youtube.com/embed/Sv3xVOs7_No?mute=1&rel=0&loop=1" title="Danny MacAskill" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
             </div>
-    
 
-            </div>
+
+
             <div class="slider-atlhet">
                 <div class="athlet">
                     <img onclick="openVideo()" class="item current-item" src="img/CARD_FABIO.png" alt="">
-                    <img class="item current-item" src="img/CARD_AVANCINI.png" alt="">
-                    <img class="item current-item" src="img/CARD-PRISCILA.png" alt="">
-                    <img class="item current-item" src="img/CARD-JONAS.png" alt="">
-                    <img class="item current-item" src="img/CARD-DANNY.png" alt="">
+                    <img onclick="openVideo()" class="item current-item" src="img/CARD_AVANCINI.png" alt="">
+                    <img onclick="openVideo()" class="item current-item" src="img/CARD-PRISCILA.png" alt="">
+                    <img onclick="openVideo()" class="item current-item" src="img/CARD-JONAS.png" alt="">
+                    <img onclick="openVideo()" class="item current-item" src="img/CARD-DANNY.png" alt="">
                 </div>
             </div>
         </section>
@@ -260,8 +266,6 @@
     })
 
 
-
-
     ScrollReveal().reveal('.title_modal', {
         distance: '200px',
         opacity: .1,
@@ -273,4 +277,26 @@
         opacity: .1,
         duration: 1000
     })
+
+    const videoModal = document.getElementById('modal-video')
+    const frame = document.querySelectorAll('iframe')
+
+    function openVideo() {
+        console.log(frame[currentItem])
+
+        videoModal.style.opacity = 100
+        close_button.style.display = 'flex'
+        videoModal.style.width = '100%'
+        frame[currentItem].style.width = '800px'
+        frame[currentItem].style.height = '450px'
+    }
+
+    function closeVideo() {
+        videoModal.style.opacity = 0
+        videoModal.style.width = 0
+        close_button.style.display = 'none'
+        frame[currentItem].style.width = 0
+        frame[currentItem].style.height = 0
+
+    }
 </script>

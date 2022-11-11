@@ -333,8 +333,9 @@ a:hover .bar {
     background-color: var(--orange);
 }
 
-.modal-video{
-    opacity: 0;
+
+#modal-video{
+    opacity: 50%;
     position: absolute;
     height: 115vh;
     width: 0;
@@ -349,17 +350,29 @@ a:hover .bar {
     gap: 3rem;
 }
 
+
+iframe{
+    position: absolute;
+    width: 0;
+}
+
+#avancini_video{
+    display: none;
+}
+
 #close_button{
+    background-color: var(--orange);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 18rem;
     cursor: pointer;
     padding: 1rem;
     width: 20px;
     height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border: 0;
     outline: 0;
-    background-color: var(--orange);
     transition: .1s linear;
 }
 
