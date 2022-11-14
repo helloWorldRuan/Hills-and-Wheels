@@ -126,43 +126,101 @@
                 <h1>NOSSOS FEITOS</h1>
                 <h2>Mostre seus principais feitos</h2>
             </div>
+        </div>
+    </section>
 
-            <div class="form-conquest reveal">
-                <div class="content-userData">
-                    <div class="user-data">
-                        <div class="campo nome">
-                            <label>SEU NOME:</label>
-                            <input type="text" id="in_name" placeholder="NOME:">
+    <section id="weConquest">
+        <div class="form-conquest reveal">
+            <div class="content-userData">
+                <div class="user-data">
+                    <div class="campo nome">
+                        <label>SEU NOME:</label>
+                        <input type="text" id="in_name" placeholder="NOME:">
+                    </div>
+                    <div class="campo">
+                        <label>GÊNERO:</label>
+                        <select id="sl_gender">
+                            <option value="">SELECIONE</option>
+                            <option value="M">MASCULINO</option>
+                            <option value="F">FEMININO</option>
+                        </select>
+                    </div>
+                    <div class="campo date">
+                        <label>DATA DE NASCIMENTO:</label>
+                        <input type="date">
+                    </div>
+                    <div class="campo">
+                        <label>ESTADO:</label>
+                        <select id="sl_UF" class="light">
+                            <option value="">SELECIONE</option>
+                            <option value="M">MASCULINO</option>
+                            <option value="F">FEMININO</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label>MODALIDADE:</label>
+                        <select id="sl_modal" class="light">
+                            <option value="">SELECIONE</option>
+                            <option value="M">MASCULINO</option>
+                            <option value="F">FEMININO</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="content-userData dataBottom">
+                <div class="part">
+                    <div class="user-data secondData">
+                        <div class="campo second">
+                            <label>MAIOR DISTÂNCIA</label>
+                            <input type="text" id="in_distance" placeholder="135km">
                         </div>
-                        <div class="campo">
-                            <label>GÊNERO:</label>
-                            <select id="sl_gender">
-                                <option value="">SELECIONE</option>
-                                <option value="M">MASCULINO</option>
-                                <option value="F">FEMININO</option>
-                            </select>
+
+                        <div class="campo second">
+                            <label>MAIOR SALTO</label>
+                            <input type="text" id="in_jump" placeholder="20m">
                         </div>
-                        <div class="campo date">
-                            <label>DATA DE NASCIMENTO:</label>
-                            <input type="date">
+
+                        <div class="campo second">
+                            <label>MAIOR VELOCIDADE</label>
+                            <input type="text" id="in_speed" placeholder="65km/h">
                         </div>
-                        <div class="campo">
-                            <label>ESTADO:</label>
-                            <select id="sl_UF" class="light">
-                                <option value="">SELECIONE</option>
-                                <option value="M">MASCULINO</option>
-                                <option value="F">FEMININO</option>
-                            </select>
+
+                        <div class="campo second">
+                            <label>COMPETIÇÕES</label>
+                            <input type="number" id="in_champ" placeholder="5">
                         </div>
-                        <div class="campo">
-                            <label>MODALIDADE:</label>
-                            <select id="sl_modal" class="light">
-                                <option value="">SELECIONE</option>
-                                <option value="M">MASCULINO</option>
-                                <option value="F">FEMININO</option>
-                            </select>
+                    </div>
+                    <div class="user-data secondData">
+                        <div class="campo second bike">
+                            <label>MODELO DA BIKE</label>
+                            <input type="text" id="in_bike" placeholder="MODELO">
                         </div>
-                    </div>          
+
+                        <div class="campo second">
+                            <label>ARO</label>
+                            <input type="text" id="in_aro" placeholder="29">
+                        </div>
+
+                        <div class="campo second">
+                            <label>MEDALHAS</label>
+                            <input type="text" id="in_medal" placeholder="8">
+                        </div>
+
+                        <div class="campo second">
+                            <label>VITÓRIAS</label>
+                            <input type="number" id="in_win" placeholder="5">
+                        </div>
+                    </div>
+                    <div class="user-data secondData">
+                        <div class="campo second txt">
+                            <label>DEIXE UMA MENSAGEM</label>
+                            <textarea id="in_msg" maxlength="200"></textarea>
+                        </div>
+                        
+                    </div>
+                    <div class="part">
+                        <button>CADASTRAR</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -176,9 +234,8 @@
             <div class="social">
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="https://github.com/helloWorldRuan/Hills-and-Wheels" target="_blank"><i
-                        class="fa-brands fa-github"></i></a>
+                <a href="https://github.com/helloWorldRuan/Hills-and-Wheels" target="_blank""><i class="fa-brands fa-github"></i></a>
+                <a href="mailto:ruan.rodrigues@sptech.school"><i class="fa-regular fa-envelope"></i></a>
             </div>
         </div>
         <div class="content-topics">
@@ -192,7 +249,7 @@
                 <h1>REDES</h1>
                 <a href="#">Instagram</a>
                 <a href="#">Facebook</a>
-                <a href="#">Whatsapp</a>
+                <a href="mailto:ruan.rodrigues@sptech.school">Email</a>
             </div>
             <div class="topic">
                 <h1>POLÍTICAS</h1>

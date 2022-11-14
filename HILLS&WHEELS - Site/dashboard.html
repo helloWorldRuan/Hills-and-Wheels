@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="https://kit.fontawesome.com/9729ff5aa8.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <!-- Barra de navegação -->
+    <div class="navbar">
+        <div class="container">
+            <div class="cells logo">
+                <a href="index.html">
+                    <img src="img/grungeLOGO.png" alt="">
+                </a>
+                <h1>DASH<br>BOARD</h1>
+            </div>
+
+            <div class="cells">
+                <div class="topics">
+                    <a href="#" class="topic active">INSIGHTS <div class="linebar activebar"></div>
+                    </a>
+                    <a href="dash-ranking.html" class="topic">RANKING <div class="linebar"></div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="cells">
+                <div class="perfil">
+                    <div class="foto"></div>
+                    <div class="infoPerfil">
+                        <h2>helloWorldRuan</h2>
+                        <span>ADMINISTRADOR</span>
+                    </div>
+                    <a href="login.html" id="icon-exit">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INSIGHTS -->
+    <section id="content-insight">
+        <div class="contain">
+            <div class="insight-view reveal">
+                <div class="container-atlhet">
+                    <img src="img/atlhete_Avancini.png" alt="">
+                </div>
+                <div class="container-insight">
+                    <div class="contentInsight">
+                        <h1 id="title">INSIGHTS</h1>
+
+                        <div class="box-insight">
+                            <div class="insight-item">
+                                <div class="insight">
+                                    <h1>150</h1>
+                                </div>
+                                <span>BIKERS</span>
+                            </div>
+
+                            <div class="insight-item">
+                                <div class="insight">
+                                    <h1>30K</h1>
+                                </div>
+                                <span>KM TOTAIS</span>
+                            </div>
+
+                            <div class="insight-item">
+                                <div class="insight">
+                                    <h1>7</h1>
+                                </div>
+                                <span>ESTADOS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-charts ">
+                <div class="box-chart gender reveal">
+                    <div>
+                        <canvas id="chartGender"></canvas>
+                    </div>
+
+                </div>
+
+                <div class="box-chart modal reveal">
+                    <canvas id="chartModal"></canvas>
+                </div>
+
+                <div class="box-chart age reveal">
+                    <canvas id="chartAge"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
+<script>
+    ScrollReveal().reveal('.reveal', {
+        duration: 1000,
+        distance: '200px',
+        interval: 300,
+        opacity: 0
+    })
+</script>
+<script>
+
+    // Gráfico de público por gênero
+    const labelsGender = [
+        'Masculino',
+        'Feminino',
+    ];
+
+    const dataGender = {
+        labels: labelsGender,
+        datasets: [{
+            label: 'Público por gênero',
+            backgroundColor: ['#FF2C18', '#5404FF'],
+            borderColor: '#171717',
+            data: [86, 64],
+        }]
+    };
+
+    const configGender = {
+        type: 'doughnut',
+        data: dataGender,
+        options: {}
+    };
+
+
+    //Gráfico de público por modalidade
+    const labelsModal = [
+        'Downhill',
+        'MTB',
+        'Speed',
+        'BMX',
+        'Bike Trial',
+    ];
+
+
+    const dataModal = {
+        labels: labelsModal,
+        datasets: [{
+            label: 'Público por modalidade',
+            backgroundColor: ['#FF2C18'],
+            borderColor: '#171717',
+            data: [15, 29, 21, 10, 30],
+        }]
+    };
+
+    const configModal = {
+        type: 'pie',
+        data: dataModal,
+        options: {}
+    };
+
+    //Gráfico de público por idade
+    const labelsAge = [
+        'Masculino',
+        'Feminino'
+    ];
+
+    const dataAge = {
+        labels: labelsAge,
+        datasets: [{
+            label: 'Público por idade',
+            backgroundColor: ['#FF2C18', '#5404FF'],
+            borderColor: '#171717',
+            data: [15, 29, 21, 10, 30],
+        }]
+    };
+
+    const configAge = {
+        type: 'bar',
+        data: dataAge,
+        options: {}
+    };
+
+</script>
+
+<script>
+    const chartGender = new Chart(
+        document.getElementById('chartGender'),
+        configGender
+    );
+
+    const chartModal = new Chart(
+        document.getElementById('chartModal'),
+        configModal
+    );
+
+    const chartAgr = new Chart(
+        document.getElementById('chartAge'),
+        configAge
+    );
+</script>

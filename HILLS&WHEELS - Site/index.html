@@ -16,19 +16,20 @@
 
 <body>
 
-    <!-- <div class="loader">
+    <div class="loader">
         <img src="img/LOGO.png" alt="">
         <div>
         </div>
-    </div> -->
+    </div>
 
     <main>
 
         <!--HEADER-->
         <section id="content-header">
+            <img src="img/grungeLOGO.png" alt="">
+
             <header>
                 <div class="component">
-                    <img src="img/LOGO.png" alt="">
                 </div>
                 <nav>
                     <ul>
@@ -64,9 +65,9 @@
 
         <!--MODALIDADES-->
         <section id="content-modal">
-            <h1 class="title_modal">MODALIDADES</h1>
+            <h1 class="title_modal reveal">MODALIDADES</h1>
 
-            <div class="modal">
+            <div class="modal reveal">
                 <div class="img-modal">
                     <img src="img/modal_downhill.png" alt="">
                 </div>
@@ -81,7 +82,7 @@
                 </div>
             </div>
 
-            <div class="modal">
+            <div class="modal reveal">
                 <div class="info-modal">
                     <h2>MTB</h2>
                     <p>
@@ -94,7 +95,7 @@
                 </div>
             </div>
 
-            <div class="modal">
+            <div class="modal reveal">
                 <div class="img-modal">
                     <img src="img/modal_speed.png" alt="">
 
@@ -109,7 +110,7 @@
                 </div>
             </div>
 
-            <div class="modal">
+            <div class="modal reveal">
                 <div class="info-modal">
                     <h2>BMX</h2>
                     <p>
@@ -124,15 +125,14 @@
                 </div>
             </div>
 
-            <div class="modal">
+            <div class="modal reveal">
                 <div class="img-modal">
                     <img src="img/modal_biketrial.png" alt="">
                 </div>
                 <div class="info-modal">
                     <h2>BIKE TRIAL</h2>
                     <p>
-                        O Bike trial é um esporte cujo objectivo é ultrapassar obstáculos, tanto naturais quanto
-                        artificiais. É uma modalidade do ciclismo derivada do trial de motocicleta. O bike trial é um
+                        O Bike trial é um esporte cujo objecivo é ultrapassar obstáculos, tanto naturais quanto artificiais. É uma modalidade do ciclismo derivada do trial de motocicleta. O bike trial é um
                         esporte de habilidade, equilíbrio e de muita técnica.
                     </p>
                 </div>
@@ -142,7 +142,7 @@
 
         <!--ATLETAS-->
         <section id="content-athlet">
-            <div class="title">
+            <div class="title reveal">
                 <h2>THE BEST</h2>
                 <h1>ATLETAS</h1>
             </div>
@@ -167,7 +167,7 @@
 
             </div>
 
-            <div class="slider-atlhet">
+            <div class="slider-atlhet reveal">
                 <div class="athlet">
                     <img onclick="openVideo()" class="item current-item" src="img/CARD_FABIO.png" alt="">
                     <img onclick="openVideo()" class="item current-item" src="img/CARD_AVANCINI.png" alt="">
@@ -185,8 +185,8 @@
                 <div class="social">
                     <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://github.com/helloWorldRuan/Hills-and-Wheels" target="_blank""><i class="fa-brands fa-github"></i></a>
+                    <a href="mailto:ruan.rodrigues@sptech.school"><i class="fa-regular fa-envelope"></i></a>
                 </div>
             </div>
             <div class="content-topics">
@@ -200,7 +200,7 @@
                     <h1>REDES</h1>
                     <a href="#">Instagram</a>
                     <a href="#">Facebook</a>
-                    <a href="#">Whatsapp</a>
+                    <a href="mailto:ruan.rodrigues@sptech.school">Email</a>
                 </div>
                 <div class="topic">
                     <h1>POLÍTICAS</h1>
@@ -221,6 +221,15 @@
 
 </html>
 <script>
+     ScrollReveal().reveal('.reveal', {
+        distance: '200px',
+        opacity: 0,
+        interval: 200,
+        duration: 1000
+    })
+
+    
+
     const controls = document.querySelectorAll('.control')
     const items = document.querySelectorAll('.item');
     const video = document.querySelectorAll(".modal-video");
@@ -261,19 +270,6 @@
             items[currentItem].classList.add('current-item')
 
         })
-    })
-
-
-    ScrollReveal().reveal('.title_modal', {
-        distance: '200px',
-        opacity: .1,
-        duration: 1000
-    })
-
-    ScrollReveal().reveal('.modal', {
-        distance: '600px',
-        opacity: .1,
-        duration: 1000
     })
 
     const videoModal = document.getElementById('modal-video')

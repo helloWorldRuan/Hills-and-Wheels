@@ -30,6 +30,7 @@
 body {
     background-color: #eaeaea;
     font-family: Oswald;
+    overflow-x: hidden;
 }
 
 .loader {
@@ -41,6 +42,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000000;
 }
 
 .loader>div {
@@ -75,7 +77,7 @@ body {
     background-image: url('../img/banner.png');
     background-repeat: no-repeat;
     background-position-y: -8rem;
-    height: 90vh;
+    height: 95vh;
 }
 
 header {
@@ -95,18 +97,16 @@ header .component {
     padding: 1rem;
 }
 
-.component img {
-    background-color: var(--orange);
-    padding: 1rem 1rem 1rem 2rem;
-    width: 150px;
+#content-header img {
+    width: 160px;
     position: relative;
-    left: -50px;
+    left: 45%;
 }
 
 .banner-text {
     display: flex;
     justify-content: flex-end;
-    padding: 2rem;
+    padding: 5rem;
 }
 
 .banner-text h1 {
@@ -145,7 +145,7 @@ h1 i {
 
 nav {
     position: fixed;
-    top: 60px;
+    top: 100px;
     background-color: #ffffff10;
     backdrop-filter: blur(20px);
     padding: 1.5rem;
@@ -589,4 +589,8 @@ footer{
     background-color: #ff1500;
     cursor: pointer;
     font-weight: 700;
+}
+
+.btn input:focus{
+    background-color: var(--orange);
 }
