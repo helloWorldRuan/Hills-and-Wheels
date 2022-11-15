@@ -19,14 +19,14 @@
     <div class="gradient"></div>
     <section id="home-event">
         <a href="index.html"><img src="img/grungeLOGO.png" alt=""></a>
-        <div class="title-event">
+        <div class="title-event reveal">
             <h1>EVENTOS</h1>
             <h2>Encontre aqui os principais eventos do mundo das bikes</h2>
         </div>
 
         <div class="content-card">
-            <div class="box-card">
-                <div class="card">
+            <div class="box-card reveal">
+                <div class="card ">
                     <div class="photo">
                         <img src="img/cardMTB.png" alt="">
                     </div>
@@ -47,9 +47,9 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
-            <div class="box-card">
+            <div class="box-card reveal">
                 <div class="card">
                     <div class="photo">
                         <img src="img/cardDOWN.png" alt="">
@@ -71,9 +71,9 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
-            <div class="box-card">
+            <div class="box-card reveal">
                 <div class="card">
                     <div class="photo">
                         <img src="img/cardSPEED.png" alt="">
@@ -95,49 +95,50 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </section>
-    
+
     <!--EVENTOS-LISTA-->
     <section id="events">
-        <div class="find-event">
+        <div class="find-event reveal">
             <h1>Encontre eventos por interesse</h1>
             <div class="filter">
                 <span>FILTRAR POR</span>
-                <i class="fa-solid fa-location-dot"></i>
 
-                <select id="sl_local">
+                <select id="sl_local" >
                     <option value="">Todas as localidades</option>
                     <option value="">Brasil</option>
                     <option value="">Estados Unidos</option>
                     <option value="">Alemanha</option>
                     <option value="">França</option>
                 </select>
-                <select id="sl_modal">
+                <select id="sl_modal" onchange="filter()">
                     <option value="">Todas as modalidadess</option>
-                    <option value="">MTB</option>
-                    <option value="">Speed</option>
-                    <option value="">Downhill</option>
-                    <option value="">BMX</option>
-                    <option value="">Bike Trial</option>
+                    <option value="MTB">MTB</option>
+                    <option value="SPEED">Speed</option>
+                    <option value="DOWNHILL">Downhill</option>
+                    <option value="BMX">BMX</option>
+                    <option value="BIKE TRIAL">Bike Trial</option>
                 </select>
             </div>
         </div>
-        <div class="events-list">
-            <div class="event">
+        <div id="list" class="events-list">
+            <div class="event reveal">
                 <div class="date_img">
                     <div class="date">
                         <h1>28</h1>
                         <h2>NOV</h2>
                     </div>
-                    <div class="img"></div>
+                    <div class="img">
+                        <img src="img/cardMTB.png" alt="">
+                    </div>
                 </div>
                 <div class="info-event">
                     <span class="modal-text">MTB</span>
-                    <h1>Circuito de XCO</h1>
-                    <h2>Mogi das Cruzes</h2>
+                    <h1 class="name-text" -text>Circuito de XCO</h1>
+                    <h2>Mogi das Cruzes - SP</h2>
                     <div class="info">
                         <div class="icon"><img src="img/brazil.png" alt=""> </div>
                         <span class="pais">Brasil</span>
@@ -145,18 +146,22 @@
                 </div>
             </div>
 
-            <div class="event">
+
+            
+            <div class="event reveal">
                 <div class="date_img">
                     <div class="date">
-                        <h1>28</h1>
+                        <h1>15</h1>
                         <h2>NOV</h2>
                     </div>
-                    <div class="img"></div>
+                    <div class="img">
+                        <img src="img/cardDOWN.png" alt="">
+                    </div>
                 </div>
                 <div class="info-event">
-                    <span class="modal-text">MTB</span>
-                    <h1>Circuito de XCO</h1>
-                    <h2>Mogi das Cruzes</h2>
+                    <span class="modal-text">DOWNHILL</span>
+                    <h1 class="name-text">Queda Livre</h1>
+                    <h2>Irati - PR</h2>
                     <div class="info">
                         <div class="icon"><img src="img/brazil.png" alt=""> </div>
                         <span class="pais">Brasil</span>
@@ -164,37 +169,62 @@
                 </div>
             </div>
 
-            <div class="event">
+            <div class="event reveal">
                 <div class="date_img">
                     <div class="date">
-                        <h1>28</h1>
+                        <h1>12</h1>
                         <h2>NOV</h2>
                     </div>
-                    <div class="img"></div>
+                    <div class="img">
+                        <img src="img/cardSPEED.png" alt="">
+                    </div>
                 </div>
                 <div class="info-event">
-                    <span class="modal-text">MTB</span>
-                    <h1>Circuito de XCO</h1>
-                    <h2>Mogi das Cruzes</h2>
+                    <span class="modal-text">SPEED</span>
+                    <h1 class="name-text">Cluster Birds</h1>
+                    <h2>São Francisco</h2>
                     <div class="info">
-                        <div class="icon"><img src="img/brazil.png" alt=""> </div>
-                        <span class="pais">Brasil</span>
+                        <div class="icon"><img src="img/estados-unidos.png" alt=""> </div>
+                        <span class="pais">Estados Unidos</span>
                     </div>
                 </div>
             </div>
 
-            <div class="event">
+            <div class="event reveal">
+                <div class="date_img">
+                    <div class="date">
+                        <h1>22</h1>
+                        <h2>DEZ</h2>
+                    </div>
+                    <div class="img">
+                        <img src="img/cardBT.png" alt="">
+                    </div>
+                </div>
+                <div class="info-event">
+                    <span class="modal-text">BIKE TRIAL</span>
+                    <h1 class="name-text">Urban Monkeys</h1>
+                    <h2>Berlim</h2>
+                    <div class="info">
+                        <div class="icon"><img src="img/germany.png" alt=""> </div>
+                        <span class="pais">Alemanha</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event reveal">
                 <div class="date_img">
                     <div class="date">
                         <h1>28</h1>
                         <h2>NOV</h2>
                     </div>
-                    <div class="img"></div>
+                    <div class="img">
+                        <img src="img/cardMTB.png" alt="">
+                    </div>
                 </div>
                 <div class="info-event">
                     <span class="modal-text">MTB</span>
-                    <h1>Circuito de XCO</h1>
-                    <h2>Mogi das Cruzes</h2>
+                    <h1 class="name-text" -text>Circuito de XCO</h1>
+                    <h2>Mogi das Cruzes - SP</h2>
                     <div class="info">
                         <div class="icon"><img src="img/brazil.png" alt=""> </div>
                         <span class="pais">Brasil</span>
@@ -211,7 +241,8 @@
             <div class="social">
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://github.com/helloWorldRuan/Hills-and-Wheels" target="_blank""><i class="fa-brands fa-github"></i></a>
+                <a href="https://github.com/helloWorldRuan/Hills-and-Wheels" target="_blank""><i class=" fa-brands
+                    fa-github"></i></a>
                 <a href="mailto:ruan.rodrigues@sptech.school"><i class="fa-regular fa-envelope"></i></a>
             </div>
         </div>
@@ -246,15 +277,45 @@
 </html>
 
 <script>
-    ScrollReveal().reveal('.event',{
-        distance: '350px',
-        opacity: .1,
-        duration: 500
-    })
-    ScrollReveal().reveal('.card',{
+    ScrollReveal().reveal('.reveal', {
         distance: '50px',
         opacity: 0,
         duration: 500,
         interval: 200
     })
+
+    var listEvents = []
+
+
+    var cardEvent = document.querySelectorAll('.event')
+    var nameT = document.querySelectorAll('.name-text')
+    var modal = document.querySelectorAll('.modal-text')
+
+
+    for (var i = 0; i < modal.length; i++) {
+        var eventsJSON = {
+            content: cardEvent[i].innerHTML,
+            name: nameT[i].innerHTML,
+            modal: modal[i].innerHTML
+        }
+
+        listEvents.push(eventsJSON)
+
+    }
+
+    console.log(listEvents[0].content)
+
+
+    function filter() {
+        list.innerHTML = ""
+        var modalSearch = sl_modal.value
+
+        console.log(modalSearch)
+
+        for (var i = 0; i < listEvents.length; i++) {
+            if (modalSearch == listEvents[i].modal) {
+                list.innerHTML = `<div class="event reveal">${listEvents[i].content}</div>`
+            }
+        }
+    }
 </script>
