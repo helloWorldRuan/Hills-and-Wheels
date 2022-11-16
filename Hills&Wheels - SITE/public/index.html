@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/9729ff5aa8.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Hills & Wheels</title>
+</head>
+
+<body>
+
+    <div class="loader">
+        <img src="img/LOGO.png" alt="">
+        <div>
+        </div>
+    </div>
+
+    <main>
+
+        <!--HEADER-->
+        <section id="content-header">
+            <img src="img/grungeLOGO.png" alt="">
+
+            <header>
+                <div class="component">
+                </div>
+                <nav>
+                    <ul>
+                        <a href="#content-header">
+                            <li>HOME</li>
+                            <div class="bar"></div>
+                        </a>
+                        <a href="#content-modal">
+                            <li>MODALIDADES</li>
+                            <div class="bar"></div>
+                        </a>
+                        <a href="#content-athlet">
+                            <li>ATLETAS</li>
+                            <div class="bar"></div>
+                        </a>
+                        <a href="events.html">
+                            <li>EVENTOS</li>
+                            <div class="bar"></div>
+                        </a>
+                        <a href="conquest.html">
+                            <li>MEUS FEITOS</li>
+                            <div class="bar"></div>
+                        </a>
+                        <a href="login.html" class="icon-login"><i class="fa-solid fa-right-to-bracket"></i></a>
+                    </ul>
+                </nav>
+                <div class="component"> </div>
+            </header>
+            <div class="banner-text">
+                <h1> <i>THE</i> <br> BIKERS <br> SOCIETY</h1>
+            </div>
+        </section>
+
+        <!--MODALIDADES-->
+        <section id="content-modal">
+            <h1 class="title_modal reveal">MODALIDADES</h1>
+
+            <div class="modal reveal">
+                <div class="img-modal">
+                    <img src="img/modal_downhill.png" alt="">
+                </div>
+                <div class="info-modal">
+                    <h2>DOWNHILL</h2>
+                    <p>
+                        Downhill é uma forma do ciclismo que consiste em descer o mais rapidamente possível um dado
+                        percurso. Uma modalidade do mountain bike nascida na Califórnia na segunda metade da década de
+                        1970.
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="modal reveal">
+                <div class="info-modal">
+                    <h2>MTB</h2>
+                    <p>
+                        Mountain Bike, também conhecido como ciclismo de montanha, (sigla MTB) é uma modalidade de
+                        ciclismo que tem como objetivo pedalar em terrenos fora da estrada convencional.
+                    </p>
+                </div>
+                <div class="img-modal">
+                    <img src="img/modal_mtb.png" alt="">
+                </div>
+            </div>
+
+            <div class="modal reveal">
+                <div class="img-modal">
+                    <img src="img/modal_speed.png" alt="">
+
+                </div>
+                <div class="info-modal">
+                    <h2>SPEED</h2>
+                    <p>
+                        Speed é outra modalidade do ciclismo (também chamado de ciclismo de estrada). Como o nome
+                        sugere, nesse caso, a velocidade é muito importante, por isso as bikes têm uma aerodinâmica
+                        diferente e são mais leves.
+                    </p>
+                </div>
+            </div>
+
+            <div class="modal reveal">
+                <div class="info-modal">
+                    <h2>BMX</h2>
+                    <p>
+                        O BMX surgiu graças à admiração de jovens norte-americanos pelo MotoCross. A vontade de imitar
+                        as manobras dos ídolos aliada à falta de equipamento fez com que bicicletas fossem utilizadas em
+                        pistas de terra. Nasceu, então, o Bicycle Moto Cross, ou simplesmente BMX.
+                    </p>
+                </div>
+                <div class="img-modal">
+                    <img src="img/modal_bmx.png" alt="">
+
+                </div>
+            </div>
+
+            <div class="modal reveal">
+                <div class="img-modal">
+                    <img src="img/modal_biketrial.png" alt="">
+                </div>
+                <div class="info-modal">
+                    <h2>BIKE TRIAL</h2>
+                    <p>
+                        O Bike trial é um esporte cujo objecivo é ultrapassar obstáculos, tanto naturais quanto artificiais. É uma modalidade do ciclismo derivada do trial de motocicleta. O bike trial é um
+                        esporte de habilidade, equilíbrio e de muita técnica.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!--ATLETAS-->
+        <section id="content-athlet">
+            <div class="title reveal">
+                <h2>THE BEST</h2>
+                <h1>ATLETAS</h1>
+            </div>
+            <div class="arrows">
+                <button class="arrow-left control"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="arrow-right control"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <div id="modal-video" onclick="closeVideo()">
+                <button id="close_button">X</button>
+
+                <iframe width="0" height="0" src="https://www.youtube.com/embed/Jk7rliZpuSs?mute=1&rel=0&loop=1" title="Fabio Wibmer" frameborder="0"allow="accelerometer; autoplay:; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe>
+
+                <iframe width="0" height="0" src="https://www.youtube.com/embed/83IUoeHCyoo?mute=1&rel=0&loop=1" title="Henrique Avancini" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe width="0" height="0" src="https://www.youtube.com/embed/c-TKhZMnBAU?mute=1&rel=0&loop=1" title="Priscilla Stevaux" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe width="0" height="0" src="https://www.youtube.com/embed/49PQhWC6JnA?mute=1&rel=0&loop=1" title="Jonas Vingegaard" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe width="0" height="0" src="https://www.youtube.com/embed/Sv3xVOs7_No?mute=1&rel=0&loop=1" title="Danny MacAskill" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+            </div>
+
+            <div class="slider-atlhet reveal">
+                <div class="athlet">
+                    <img onclick="openVideo()" class="item current-item" src="img/CARD_FABIO.png" alt="">
+                    <img onclick="openVideo()" class="item current-item" src="img/CARD_AVANCINI.png" alt="">
+                    <img onclick="openVideo()" class="item current-item" src="img/CARD-PRISCILA.png" alt="">
+                    <img onclick="openVideo()" class="item current-item" src="img/CARD-JONAS.png" alt="">
+                    <img onclick="openVideo()" class="item current-item" src="img/CARD-DANNY.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!--FOOTER-->
+        <footer>
+            <div class="img_social">
+                <img src="img/grungeLOGO.png" alt="">
+                <div class="social">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://github.com/helloWorldRuan/Hills-and-Wheels" target="_blank""><i class="fa-brands fa-github"></i></a>
+                    <a href="mailto:ruan.rodrigues@sptech.school"><i class="fa-regular fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="content-topics">
+                <div class="topic">
+                    <h1>RECURSOS</h1>
+                    <a href="#">Bikers Ranking</a>
+                    <a href="#">Meus feitos</a>
+                    <a href="#">Galeria</a>
+                </div>
+                <div class="topic">
+                    <h1>REDES</h1>
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="mailto:ruan.rodrigues@sptech.school">Email</a>
+                </div>
+                <div class="topic">
+                    <h1>POLÍTICAS</h1>
+                    <a href="#">Documentação</a>
+                    <a href="#">Termos de uso</a>
+                    <a href="https://github.com/helloWorldRuan/Hills-and-Wheels" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="copy">
+                <span>Todos os direitos reservados &copy; Copyright</span>
+                <p>Developed by <b>helloWorldRuan</b></p>
+            </div>
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
+<script>
+     ScrollReveal().reveal('.reveal', {
+        distance: '200px',
+        opacity: 0,
+        interval: 200,
+        duration: 1000
+    })
+
+    
+
+    const controls = document.querySelectorAll('.control')
+    const items = document.querySelectorAll('.item');
+    const video = document.querySelectorAll(".modal-video");
+    const maxItems = items.length
+    let currentItem = 0
+
+
+    controls.forEach(control => {
+        control.addEventListener('click', () => {
+            const isLeft = control.classList.contains('arrow-left')
+
+            if (isLeft) {
+                currentItem -= 1
+            }
+            else {
+                currentItem += 1
+            }
+
+            if (currentItem >= maxItems) {
+                currentItem = 0
+            }
+
+            if (currentItem < 0) {
+                currentItem = maxItems - 1
+            }
+
+            items.forEach(item =>
+                item.classList.remove('current-item'))
+
+            items[currentItem].scrollIntoView({
+                inline: 'center',
+                behavior: 'smooth',
+                block: 'nearest'
+            })
+
+            console.log("control", isLeft, currentItem, maxItems)
+
+            items[currentItem].classList.add('current-item')
+
+        })
+    })
+
+    const videoModal = document.getElementById('modal-video')
+    const frame = document.querySelectorAll('iframe')
+
+    function openVideo() {
+        console.log(frame[currentItem])
+
+        videoModal.style.opacity = 100
+        close_button.style.display = 'flex'
+        videoModal.style.width = '100%'
+        frame[currentItem].style.width = '800px'
+        frame[currentItem].style.height = '450px'
+    }
+
+    function closeVideo() {
+        videoModal.style.opacity = 0
+        videoModal.style.width = 0
+        close_button.style.display = 'none'
+        frame[currentItem].style.width = 0
+        frame[currentItem].style.height = 0
+
+    }
+</script>
