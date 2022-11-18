@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="https://kit.fontawesome.com/9729ff5aa8.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <!-- Barra de navegação -->
+    <div class="navbar">
+        <div class="container">
+            <div class="cells logo">
+                <a href="index.html">
+                    <img src="img/grungeLOGO.png" alt="">
+                </a>
+                <h1>DASH<br>BOARD</h1>
+            </div>
+
+            <div class="cells">
+                <div class="topics">
+                    <a href="#" onclick="test()" class="topic test2">INSIGHTS <div class="linebar testbar2"></div>
+                    </a>
+                    <a href="#" onclick="test2()" class="topic active test">RANKING <div
+                            class="linebar activebar testbar"></div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="cells">
+                <div class="perfil">
+                    <div class="foto"></div>
+                    <div class="infoPerfil">
+                        <h2>helloWorldRuan</h2>
+                        <span>ADMINISTRADOR</span>
+                    </div>
+                    <a href="login.html" id="icon-exit">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INSIGHTS -->
+    <section id="content-ranking">
+        <div class="contain">
+            <div class="title-ranking">
+                <h2>OS MELHORES ATLETAS</h2>
+                <h1>BIKERS RANKING</h1>
+            </div>
+            <div class="ranking-content">
+                <div class="ranking column">
+                    <label>ID</label>
+                    <label>NOME</label>
+                    <label>MODALIDADE</label>
+                    <label>DISTÂNCIA</label>
+                    <label>SALTO</label>
+                    <label>COMPETIÇÕES</label>
+                    <label>MEDALHAS</label>
+                    <label>VITÓRIAS</label>
+                </div>
+
+                <div class="list-ranking">
+
+                    <div class="ranking top supborder">
+                        <label class="l-id">1</label>
+                        <label class="l-nome">Jairo Pingola</label>
+                        <label>Downhill</label>
+                        <label>88km</label>
+                        <label>23.8m</label>
+                        <label>15</label>
+                        <label>12</label>
+                        <label>9</label>
+                    </div>
+
+                    <div class="ranking top">
+                        <label class="l-id">2</label>
+                        <label class="l-nome">Epaminondas Roda Mole</label>
+                        <label>Speed</label>
+                        <label>256km</label>
+                        <label>1m</label>
+                        <label>4</label>
+                        <label>1</label>
+                        <label>0</label>
+                    </div>
+
+                    <div class="ranking top infborder">
+                        <label class="l-id">3</label>
+                        <label class="l-nome">Juca Ghado</label>
+                        <label>MTB</label>
+                        <label>156km</label>
+                        <label>2m</label>
+                        <label>28</label>
+                        <label>11</label>
+                        <label>2</label>
+                    </div>
+
+                    
+                </div>
+
+                <div class="list-ranking">
+
+                    <div class="ranking supborder">
+                        <label class="l-id">4</label>
+                        <label class="l-nome">Jairo Pingola</label>
+                        <label>Downhill</label>
+                        <label>88km</label>
+                        <label>23.8m</label>
+                        <label>15</label>
+                        <label>12</label>
+                        <label>9</label>
+                    </div>
+
+                    <div class="ranking">
+                        <label class="l-id">5</label>
+                        <label class="l-nome">Epaminondas Roda Mole</label>
+                        <label>Speed</label>
+                        <label>256km</label>
+                        <label>1m</label>
+                        <label>4</label>
+                        <label>1</label>
+                        <label>0</label>
+                    </div>
+
+                    <div class="ranking">
+                        <label class="l-id">6</label>
+                        <label class="l-nome">Epaminondas Roda Mole</label>
+                        <label>Speed</label>
+                        <label>256km</label>
+                        <label>1m</label>
+                        <label>4</label>
+                        <label>1</label>
+                        <label>0</label>
+                    </div>
+
+                    <div class="ranking">
+                        <label class="l-id">7</label>
+                        <label class="l-nome">Epaminondas Roda Mole</label>
+                        <label>Speed</label>
+                        <label>256km</label>
+                        <label>1m</label>
+                        <label>4</label>
+                        <label>1</label>
+                        <label>0</label>
+                    </div>
+
+                    <div class="ranking">
+                        <label class="l-id">8</label>
+                        <label class="l-nome">Epaminondas Roda Mole</label>
+                        <label>Speed</label>
+                        <label>256km</label>
+                        <label>1m</label>
+                        <label>4</label>
+                        <label>1</label>
+                        <label>0</label>
+                    </div>
+
+                    <div class="ranking">
+                        <label class="l-id">9</label>
+                        <label class="l-nome">Epaminondas Roda Mole</label>
+                        <label>Speed</label>
+                        <label>256km</label>
+                        <label>1m</label>
+                        <label>4</label>
+                        <label>1</label>
+                        <label>0</label>
+                    </div>
+
+                    <div class="ranking infborder">
+                        <label class="l-id">10</label>
+                        <label class="l-nome">Juca Ghado</label>
+                        <label>MTB</label>
+                        <label>156km</label>
+                        <label>2m</label>
+                        <label>28</label>
+                        <label>11</label>
+                        <label>2</label>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
+
+<script>
+
+    var i = 0
+    var j = 0
+
+    function test() {
+        i = 0
+        if (i == 0) {
+            var test = document.querySelector('.test')
+            var test2 = document.querySelector('.test2')
+            var testbar = document.querySelector('.testbar')
+            var testbar2 = document.querySelector('.testbar2')
+            test.classList.remove('active')
+            test2.classList.toggle('active')
+            testbar.classList.remove('activebar')
+            testbar2.classList.toggle('activebar')
+            i++
+            j = -1
+        }
+    }
+
+    function test2() {
+        j = 0
+        if (j == 0) {
+            var test = document.querySelector('.test')
+            var test2 = document.querySelector('.test2')
+            var testbar = document.querySelector('.testbar')
+            var testbar2 = document.querySelector('.testbar2')
+            test2.classList.remove('active')
+            test.classList.toggle('active')
+            testbar2.classList.remove('activebar')
+            testbar.classList.toggle('activebar')
+            j++
+            i = -1
+        }
+    }
+</script>
