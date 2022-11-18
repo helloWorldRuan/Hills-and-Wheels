@@ -51,6 +51,15 @@ function cadastrar() {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
+            resposta.json()
+            .then(function (respostaFormatada) {
+                console.log(respostaFormatada)
+                console.log(respostaFormatada.insertedId)
+
+                fetch()
+
+            })
+
             alert('Cadastro realizado com sucesso!')
 
         } else {
