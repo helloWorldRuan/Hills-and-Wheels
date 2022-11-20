@@ -11,48 +11,13 @@
     <script src="https://kit.fontawesome.com/9729ff5aa8.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title>Dashboard</title>
+    <title>Hills & Wheels - Ranking</title>
 </head>
 
 <body>
 
-    <!-- Barra de navegação -->
-    <div class="navbar">
-        <div class="container">
-            <div class="cells logo">
-                <a href="index.html">
-                    <img src="img/grungeLOGO.png" alt="">
-                </a>
-                <h1>DASH<br>BOARD</h1>
-            </div>
-
-            <div class="cells">
-                <div class="topics">
-                    <a href="#" onclick="test()" class="topic test2">INSIGHTS <div class="linebar testbar2"></div>
-                    </a>
-                    <a href="#" onclick="test2()" class="topic active test">RANKING <div
-                            class="linebar activebar testbar"></div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="cells">
-                <div class="perfil">
-                    <div class="foto"></div>
-                    <div class="infoPerfil">
-                        <h2>helloWorldRuan</h2>
-                        <span>ADMINISTRADOR</span>
-                    </div>
-                    <a href="login.html" id="icon-exit">
-                        <i class="fa-solid fa-right-to-bracket"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- INSIGHTS -->
-    <section id="content-ranking">
+    <!-- RANKING -->
+    <section style="opacity: 1; width: 100%; display: flex;" id="contentRanking">
         <div class="contain">
             <div class="title-ranking">
                 <h2>OS MELHORES ATLETAS</h2>
@@ -105,7 +70,7 @@
                         <label>2</label>
                     </div>
 
-                    
+
                 </div>
 
                 <div class="list-ranking">
@@ -187,50 +152,13 @@
                         <label>2</label>
                     </div>
 
-                    
+
                 </div>
             </div>
         </div>
     </section>
 
+
 </body>
 
 </html>
-
-<script>
-
-    var i = 0
-    var j = 0
-
-    function test() {
-        i = 0
-        if (i == 0) {
-            var test = document.querySelector('.test')
-            var test2 = document.querySelector('.test2')
-            var testbar = document.querySelector('.testbar')
-            var testbar2 = document.querySelector('.testbar2')
-            test.classList.remove('active')
-            test2.classList.toggle('active')
-            testbar.classList.remove('activebar')
-            testbar2.classList.toggle('activebar')
-            i++
-            j = -1
-        }
-    }
-
-    function test2() {
-        j = 0
-        if (j == 0) {
-            var test = document.querySelector('.test')
-            var test2 = document.querySelector('.test2')
-            var testbar = document.querySelector('.testbar')
-            var testbar2 = document.querySelector('.testbar2')
-            test2.classList.remove('active')
-            test.classList.toggle('active')
-            testbar2.classList.remove('activebar')
-            testbar.classList.toggle('activebar')
-            j++
-            i = -1
-        }
-    }
-</script>

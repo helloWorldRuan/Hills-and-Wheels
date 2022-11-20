@@ -11,6 +11,7 @@
     <script src="https://kit.fontawesome.com/9729ff5aa8.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/dash.js"></script>
     <title>Dashboard</title>
 </head>
 
@@ -28,9 +29,11 @@
 
             <div class="cells">
                 <div class="topics">
-                    <a href="#" class="topic active">INSIGHTS <div class="linebar activebar"></div>
+                    <a href="#" onclick="changeInsight()" class="topic active test">INSIGHTS
+                        <div class="linebar activebar testbar"></div>
                     </a>
-                    <a href="dash-ranking.html" class="topic">RANKING <div class="linebar"></div>
+                    <a href="#" onclick="changeRanking()" class="topic  test2">RANKING
+                        <div class="linebar testbar2"></div>
                     </a>
                 </div>
             </div>
@@ -50,64 +53,232 @@
         </div>
     </div>
 
-    <!-- INSIGHTS -->
-    <section id="content-insight">
-        <div class="contain">
-            <div class="insight-view reveal">
-                <div class="container-atlhet">
-                    <img src="img/atlhete_Avancini.png" alt="">
-                </div>
-                <div class="container-insight">
-                    <div class="contentInsight">
-                        <h1 id="title">INSIGHTS</h1>
+    <!-- SECTIONS CONTENT -->
+    <div class="containerAll">
 
-                        <div class="box-insight">
-                            <div class="insight-item">
-                                <div class="insight">
-                                    <h1>150</h1>
-                                </div>
-                                <span>BIKERS</span>
-                            </div>
+        <!-- INSIGHTS -->
+        <section id="contentInsight">
+            <div class="contain">
+                <div class="insight-view reveal">
+                    <div id="imgAthlet" class="container-atlhet">
+                    </div>
+                    <div class="container-insight">
+                        <div class="contentInsight">
+                            <h1 id="title">INSIGHTS</h1>
 
-                            <div class="insight-item">
-                                <div class="insight">
-                                    <h1>30K</h1>
+                            <div class="box-insight">
+                                <div class="insight-item">
+                                    <div class="insight">
+                                        <h1>150</h1>
+                                    </div>
+                                    <span>BIKERS</span>
                                 </div>
-                                <span>KM TOTAIS</span>
-                            </div>
 
-                            <div class="insight-item">
-                                <div class="insight">
-                                    <h1>7</h1>
+                                <div class="insight-item">
+                                    <div class="insight">
+                                        <h1>30K</h1>
+                                    </div>
+                                    <span>KM TOTAIS</span>
                                 </div>
-                                <span>ESTADOS</span>
+
+                                <div class="insight-item">
+                                    <div class="insight">
+                                        <h1>7</h1>
+                                    </div>
+                                    <span>PAÍSES</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="box-charts ">
-                <div class="box-chart gender reveal">
-                    <div>
-                        <canvas id="chartGender"></canvas>
+                <div class="box-charts ">
+                    <div class="box-chart gender reveal">
+                        <div>
+                            <canvas id="chartGender"></canvas>
+                        </div>
+
                     </div>
 
-                </div>
+                    <div class="box-chart modal reveal">
+                        <canvas id="chartModal"></canvas>
+                    </div>
 
-                <div class="box-chart modal reveal">
-                    <canvas id="chartModal"></canvas>
-                </div>
-
-                <div class="box-chart age reveal">
-                    <canvas id="chartAge"></canvas>
+                    <div class="box-chart age reveal">
+                        <canvas id="chartAge"></canvas>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        
+
+        <!-- RANKING -->
+        <section id="contentRanking">
+            <div class="contain">
+                <div class="title-ranking">
+                    <h2>OS MELHORES ATLETAS</h2>
+                    <h1>BIKERS RANKING</h1>
+                </div>
+                <div class="ranking-content">
+                    <div class="ranking column">
+                        <label>ID</label>
+                        <label>NOME</label>
+                        <label>MODALIDADE</label>
+                        <label>DISTÂNCIA</label>
+                        <label>SALTO</label>
+                        <label>COMPETIÇÕES</label>
+                        <label>MEDALHAS</label>
+                        <label>VITÓRIAS</label>
+                    </div>
+
+                    <div class="list-ranking">
+
+                        <div class="ranking top supborder">
+                            <label class="l-id">1</label>
+                            <label class="l-nome">Jairo Pingola</label>
+                            <label>Downhill</label>
+                            <label>88km</label>
+                            <label>23.8m</label>
+                            <label>15</label>
+                            <label>12</label>
+                            <label>9</label>
+                        </div>
+
+                        <div class="ranking top">
+                            <label class="l-id">2</label>
+                            <label class="l-nome">Epaminondas Roda Mole</label>
+                            <label>Speed</label>
+                            <label>256km</label>
+                            <label>1m</label>
+                            <label>4</label>
+                            <label>1</label>
+                            <label>0</label>
+                        </div>
+
+                        <div class="ranking top infborder">
+                            <label class="l-id">3</label>
+                            <label class="l-nome">Juca Ghado</label>
+                            <label>MTB</label>
+                            <label>156km</label>
+                            <label>2m</label>
+                            <label>28</label>
+                            <label>11</label>
+                            <label>2</label>
+                        </div>
+
+
+                    </div>
+
+                    <div class="list-ranking">
+
+                        <div class="ranking supborder">
+                            <label class="l-id">4</label>
+                            <label class="l-nome">Jairo Pingola</label>
+                            <label>Downhill</label>
+                            <label>88km</label>
+                            <label>23.8m</label>
+                            <label>15</label>
+                            <label>12</label>
+                            <label>9</label>
+                        </div>
+
+                        <div class="ranking">
+                            <label class="l-id">5</label>
+                            <label class="l-nome">Epaminondas Roda Mole</label>
+                            <label>Speed</label>
+                            <label>256km</label>
+                            <label>1m</label>
+                            <label>4</label>
+                            <label>1</label>
+                            <label>0</label>
+                        </div>
+
+                        <div class="ranking">
+                            <label class="l-id">6</label>
+                            <label class="l-nome">Epaminondas Roda Mole</label>
+                            <label>Speed</label>
+                            <label>256km</label>
+                            <label>1m</label>
+                            <label>4</label>
+                            <label>1</label>
+                            <label>0</label>
+                        </div>
+
+                        <div class="ranking">
+                            <label class="l-id">7</label>
+                            <label class="l-nome">Epaminondas Roda Mole</label>
+                            <label>Speed</label>
+                            <label>256km</label>
+                            <label>1m</label>
+                            <label>4</label>
+                            <label>1</label>
+                            <label>0</label>
+                        </div>
+
+                        <div class="ranking">
+                            <label class="l-id">8</label>
+                            <label class="l-nome">Epaminondas Roda Mole</label>
+                            <label>Speed</label>
+                            <label>256km</label>
+                            <label>1m</label>
+                            <label>4</label>
+                            <label>1</label>
+                            <label>0</label>
+                        </div>
+
+                        <div class="ranking">
+                            <label class="l-id">9</label>
+                            <label class="l-nome">Epaminondas Roda Mole</label>
+                            <label>Speed</label>
+                            <label>256km</label>
+                            <label>1m</label>
+                            <label>4</label>
+                            <label>1</label>
+                            <label>0</label>
+                        </div>
+
+                        <div class="ranking infborder">
+                            <label class="l-id">10</label>
+                            <label class="l-nome">Juca Ghado</label>
+                            <label>MTB</label>
+                            <label>156km</label>
+                            <label>2m</label>
+                            <label>28</label>
+                            <label>11</label>
+                            <label>2</label>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
 </body>
 
 </html>
+
+<script>
+    var n = parseInt(1 + Math.random() * 5)
+    var img = ""
+
+    if (n == 1) {
+        img = '<img src="img/atlheteAvancini.png" alt="">'
+    } else if (n == 2) {
+        img = '<img src="img/atlhetePriscila.png" alt="">'
+    } else if (n == 3) {
+        img = '<img src="img/atlheteFabio.png" alt="">'
+    } else if (n == 4) {
+        img = '<img src="img/atlheteDanny.png" alt="">'
+    } else{
+        img = '<img src="img/atlheteJonas.png" alt="">'
+    }
+
+    imgAthlet.innerHTML = img
+
+    console.log(n)
+</script>
+
 <script>
     ScrollReveal().reveal('.reveal', {
         duration: 1000,
