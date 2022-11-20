@@ -1,4 +1,4 @@
-#myConquest{
+#myConquest {
     background-image: url('../img/BG-CONQUEST.png');
     background-size: cover;
     background-position-x: -5rem;
@@ -6,7 +6,7 @@
     padding-bottom: 10rem;
 }
 
-.logo{
+.logo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,11 +14,11 @@
     margin-bottom: 2rem;
 }
 
-.logo img{
+.logo img {
     width: 150px;
 }
 
-.container{
+.container {
     color: var(--black);
     padding: 2rem;
     width: 90vw;
@@ -30,7 +30,7 @@
     gap: 6rem;
 }
 
-.container .titles{
+.container .titles {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,17 +38,17 @@
     gap: 1rem;
 }
 
-.titles h1{
+.titles h1 {
     font-size: 6rem;
     font-weight: 700;
 }
 
-.titles h2{
+.titles h2 {
     font-size: 2rem;
     font-weight: 500;
 }
 
-.container .text{
+.container .text {
     font-family: Open Sans;
     width: 70%;
     padding: 1rem;
@@ -60,41 +60,41 @@
     gap: 2rem;
 }
 
-.text h1{
+.text h1 {
     font-size: 2rem;
     font-weight: 800;
 }
 
-.text p{
+.text p {
     font-size: 1.2rem;
     font-weight: 500;
     line-height: 2rem;
 }
 
-.content-values{
+.content-values {
     padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 3rem 0 10rem; 
+    margin: 3rem 0 10rem;
     gap: 5rem;
 }
 
-.content-values h1{
+.content-values h1 {
     font-size: 4rem;
     font-weight: 700;
     letter-spacing: 1px;
 }
 
-.box-values{
+.box-values {
     width: 90%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.value{
+.value {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -102,7 +102,7 @@
     gap: 1rem;
 }
 
-.value h2{
+.value h2 {
     color: rgb(51, 51, 51);
     font-size: 1.5rem;
     letter-spacing: 2px;
@@ -110,7 +110,7 @@
     transition: .1s ease;
 }
 
-.value .box{
+.value .box {
     background-color: #ffeb93;
     width: 200px;
     height: 200px;
@@ -121,32 +121,45 @@
     transition: .3s ease;
 }
 
-.value:hover .box{
+.value:hover .box {
     background-color: var(--orange);
     box-shadow: 0 0 50px var(--orange);
     border-radius: 5px;
 }
 
-.value:hover h2{
+.value:hover h2 {
     color: var(--black);
     font-weight: 700;
 }
 
-.content-adventure{
+.content-adventure {
+    overflow: hidden;
     font-family: Open Sans;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: var(--black);
     padding: 5rem 0;
     margin-bottom: 8rem;
 }
 
-.content-adventure #title{
+.content-adventure #title {
     color: white;
     font-weight: 600;
     padding: 0 0 0 8rem;
     font-size: 2rem;
 }
 
-.item{
+.sliderAdventure {
+    display: flex;
+    align-items: center;
+}
+
+.sliderAdventure .arrows {
+    position: absolute;
+}
+
+.item {
     padding: 0 0 0 8rem;
     height: 100vh;
     display: flex;
@@ -155,18 +168,18 @@
     gap: 2rem;
 }
 
-.contentItem{
+.contentItem {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
 }
 
-.contentItem img{
+.contentItem img {
     width: 700px;
 }
 
-.contentItem h1{
+.contentItem h1 {
     color: white;
     font-size: 3rem;
     font-weight: 700;
@@ -174,15 +187,15 @@
     padding: 0;
 }
 
-.box-info{
+.box-info {
     display: flex;
     justify-content: space-evenly;
     width: 700px;
     height: 100px;
 }
 
-.box-info .info{
-    background-color:  var(--orange);
+.box-info .info {
+    background-color: var(--orange);
     width: 100%;
     height: 100px;
     padding: 1rem;
@@ -193,7 +206,7 @@
     transition: .2s ease;
 }
 
-.box-info .info h1{
+.box-info .info h1 {
     font-family: Oswald;
     font-weight: 700;
     font-size: 3rem;
@@ -201,7 +214,7 @@
     margin-bottom: 1rem;
 }
 
-.box-info .info span{
+.box-info .info span {
     color: var(--black);
     font-family: Open Sans;
     font-size: .8rem;
@@ -209,7 +222,7 @@
     letter-spacing: 1px;
 }
 
-.addInfo{
+.addInfo {
     width: 40%;
     padding: 7rem 5rem 0 2rem;
     display: flex;
@@ -218,29 +231,29 @@
     height: 500px;
 }
 
-.addInfo .box-info{
-    width: 50%;
+.addInfo .box-info {
+    width: 80%;
     flex-direction: column;
 }
 
-.addInfo .box-info .info{
+.addInfo .box-info .info {
     padding: 1.5rem;
     background-color: var(--orange);
 }
 
-.box-info .info:hover{
+.box-info .info:hover {
     background-color: rgb(255, 60, 25);
 }
 
-.arrows{
+.arrows {
     left: 0;
 }
 
-.arrows button{
+.arrows button {
     background-color: var(--yellow);
 }
 
-#weConquest{
+#weConquest {
     background-image: url('../img/SKETCH.png');
     background-size: cover;
     display: flex;
@@ -250,7 +263,7 @@
     height: 150vh;
 }
 
-.form-conquest{
+.form-conquest {
     width: 80%;
     position: relative;
     bottom: 6rem;
@@ -260,12 +273,12 @@
     gap: 30rem;
 }
 
-.content-userData{
+.content-userData {
     background-color: var(--black);
     padding: 2rem;
 }
 
-.dataBottom{
+.dataBottom {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -274,7 +287,7 @@
     padding: 0;
 }
 
-.part{
+.part {
     height: 200px;
     width: 100%;
     display: flex;
@@ -283,21 +296,21 @@
     align-items: center;
 }
 
-.user-data{
+.user-data {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
 }
 
-.secondData{
+.secondData {
     background-color: var(--black);
     padding-top: 2rem;
     justify-content: center;
     gap: 2rem;
 }
 
-.campo{
+.campo {
     width: 15%;
     height: 80px;
     padding: 1rem;
@@ -307,21 +320,24 @@
     align-items: center;
 }
 
-.nome{
+.nome {
     width: 25%;
 }
 
-.data{
+.data {
     width: 10%;
 }
 
-.campo label{
+.campo label {
     color: white;
     font-size: 1rem;
     font-weight: 300;
 }
 
-.campo input, select, textarea{
+.campo input,
+select,
+textarea,
+option {
     color: white;
     font-family: Open Sans;
     font-weight: 500;
@@ -333,13 +349,13 @@
     transition: .2s linear;
 }
 
-.txt{
+.txt {
     height: 200px;
     width: 75%;
     margin-bottom: 2rem;
 }
 
-textarea{
+textarea {
     padding: 2rem;
     display: flex;
     justify-content: center;
@@ -351,31 +367,34 @@ textarea{
     border-radius: 5px;
 }
 
-.second input{
+.second input {
     text-align: center;
     width: 50%;
 }
 
-.bike input{
+.bike input {
     width: 100%;
 }
 
-.campo input:focus{
+.campo input:focus,
+select:focus {
     background-color: #393939;
 }
 
-.light{
+.light {
     color: black;
     background-color: var(--yellow);
 }
 
-input[type="date"]{
+input[type="date"] {
     width: 65%;
     color: var(--yellow);
     font-weight: 100;
 }
 
-.part button{
+.part button {
+    position: relative;
+    bottom: 0;
     width: 20%;
     background-color: var(--yellow);
     padding: .5rem 2rem;
@@ -384,15 +403,20 @@ input[type="date"]{
     font-size: 2rem;
     transition: .1s ease;
     cursor: pointer;
+    transition: .2s ease;
 }
 
-.part button:hover{
+.part button:hover {
     background-color: var(--orange);
     font-weight: 600;
 }
 
+.part button:focus {
+    bottom: 10px;
+}
 
-#in_pais{
+
+#in_pais {
     width: 70%;
     color: black;
     background-color: var(--yellow);

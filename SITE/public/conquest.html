@@ -11,11 +11,13 @@
     <script src="https://kit.fontawesome.com/9729ff5aa8.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/cadastro.js"></script>
-    
+
     <title>Hills & Wheels</title>
 </head>
 
 <body>
+
+    
 
     <section id="myConquest">
         <div class="logo">
@@ -42,6 +44,8 @@
                 </p>
             </div>
         </div>
+
+        
 
         <div class="content-values reveal">
             <h1>VALORES</h1>
@@ -72,13 +76,12 @@
 
         <div class="content-adventure">
             <h1 id="title" class="reveal">AVENTURAS</h1>
-
+            <div class="arrows">
+                <button class="arrow-left control"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="arrow-right control"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
             <div class="sliderAdventure reveal">
-                <div class="item">
-                    <div class="arrows">
-                        <button class="arrow-left control"><i class="fa-solid fa-arrow-left"></i></button>
-                        <button class="arrow-right control"><i class="fa-solid fa-arrow-right"></i></button>
-                    </div>
+                <div class="item current-item">
                     <div class="contentItem">
                         <h1>Parque Ibirapuera</h1>
 
@@ -119,6 +122,91 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="item current-item">
+                    <div class="contentItem">
+                        <h1>Parque Ibirapuera</h1>
+
+                        <img src="img/mapIbira.png" alt="">
+                        <div class="box-info">
+                            <div class="info">
+                                <h1>96,30km</h1>
+                                <span>DISTÂNCIA</span>
+                            </div>
+
+                            <div class="info">
+                                <h1>5:09:23</h1>
+                                <span>TEMPO EM MOVIMENTO</span>
+                            </div>
+
+                            <div class="info">
+                                <h1>679m</h1>
+                                <span>ELEVAÇÃO</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="addInfo">
+                        <div class="box-info">
+                            <div class="info">
+                                <h1>18,5km/h</h1>
+                                <span>VELOCIDADE MÉDIA</span>
+                            </div>
+
+                            <div class="info">
+                                <h1>51,2km/h</h1>
+                                <span>VELOCIDADE MÁXIMA</span>
+                            </div>
+
+                            <div class="info">
+                                <h1>6:21:08</h1>
+                                <span>TEMPO DECORRIDO</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item current-item">
+                    <div class="contentItem">
+                        <h1>Parque Ibirapuera</h1>
+
+                        <img src="img/mapIbira.png" alt="">
+                        <div class="box-info">
+                            <div class="info">
+                                <h1>96,30km</h1>
+                                <span>DISTÂNCIA</span>
+                            </div>
+
+                            <div class="info">
+                                <h1>5:09:23</h1>
+                                <span>TEMPO EM MOVIMENTO</span>
+                            </div>
+
+                            <div class="info">
+                                <h1>679m</h1>
+                                <span>ELEVAÇÃO</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="addInfo">
+                        <div class="box-info">
+                            <div class="info">
+                                <h1>18,5km/h</h1>
+                                <span>VELOCIDADE MÉDIA</span>
+                            </div>
+
+                            <div class="info">
+                                <h1>51,2km/h</h1>
+                                <span>VELOCIDADE MÁXIMA</span>
+                            </div>
+
+                            <div class="info">
+                                <h1>6:21:08</h1>
+                                <span>TEMPO DECORRIDO</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
             </div>
         </div>
 
@@ -219,7 +307,7 @@
 
                     </div>
                     <div class="part">
-                        <button onclick="cadastrar()" >CADASTRAR</button>
+                        <button onclick="cadastrar()">CADASTRAR</button>
                     </div>
                 </div>
             </div>
@@ -270,6 +358,50 @@
 </html>
 
 <script>
+
+    //Carrosel aventuras
+    const controls = document.querySelectorAll('.control')
+    const items = document.querySelectorAll('.item');
+    const maxItems = items.length
+    let currentItem = 0
+
+    console.log(maxItems)
+
+    controls.forEach(control => {
+        control.addEventListener('click', () => {
+            const isLeft = control.classList.contains('arrow-left')
+
+            if (isLeft) {
+                currentItem -= 1
+            }
+            else {
+                currentItem += 1
+            }
+
+            if (currentItem >= maxItems) {
+                currentItem = 0
+            }
+
+            if (currentItem < 0) {
+                currentItem = maxItems - 1
+            }
+
+            items.forEach(item =>
+                item.classList.remove('current-item'))
+
+            items[currentItem].scrollIntoView({
+                inline: 'center',
+                behavior: 'smooth',
+                block: 'nearest'
+            })
+
+            console.log("control", isLeft, currentItem, maxItems)
+
+            items[currentItem].classList.add('current-item')
+        })
+    })
+
+    // Efeitos de scroll
     ScrollReveal().reveal('.reveal', {
         duration: 1000,
         distance: '100px',

@@ -221,15 +221,8 @@
 
 </html>
 <script>
-     ScrollReveal().reveal('.reveal', {
-        distance: '200px',
-        opacity: 0,
-        interval: 200,
-        duration: 1000
-    })
 
-    
-
+    // Carrosel atletas
     const controls = document.querySelectorAll('.control')
     const items = document.querySelectorAll('.item');
     const video = document.querySelectorAll(".modal-video");
@@ -268,10 +261,11 @@
             console.log("control", isLeft, currentItem, maxItems)
 
             items[currentItem].classList.add('current-item')
-
         })
     })
 
+
+    // Modal de vídeo
     const videoModal = document.getElementById('modal-video')
     const frame = document.querySelectorAll('iframe')
 
@@ -293,4 +287,12 @@
         frame[currentItem].style.height = 0
 
     }
+
+    // Efeitos de scroll
+    ScrollReveal().reveal('.reveal', {
+        distance: '200px',
+        opacity: 0,
+        interval: 200,
+        duration: 1000
+    })
 </script>

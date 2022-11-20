@@ -627,10 +627,10 @@ footer{
     padding: .5rem;
     background-color: #ffdd98;
     width: 90%;
-    transition: .1s ease;
+    transition: .05s ease;
 }
 
-.campo input:focus {
+.campo input:focus, select:focus {
     background-color: #ffd298;
     box-shadow: 0 0 5px var(--orange);
     outline: 1px solid var(--orange);
