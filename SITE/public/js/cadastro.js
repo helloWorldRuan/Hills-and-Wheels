@@ -48,6 +48,8 @@ function cadastrar() {
                     }).then(function (resposta) {
                         console.log("resposta: ", resposta)
 
+                        var idConquista = resposta.insertID
+
                         if (resposta.ok) {
                             resposta.json()
                                 .then(function (respostaBiker) {

@@ -51,5 +51,28 @@ function changeInsight() {
     }
 }
 
+function buscarDados(filtro) {
+    fetch('/usuarios/buscarPorId', {
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(filtro)
+    })
+    .then(function (resposta) {
+        resposta.json()
+            .then(function (json) {
+                for(var i = 0; i < json.length; i++) {
+                    ranking_top.innerHTML = json[i].idBiker
+                }
+            })
+            .catch(function (erro) {
+                console.error(erro);
+            })
+    })
+    .catch(function (erro) {
+        console.error(erro);
+    })
+}
+
 
 

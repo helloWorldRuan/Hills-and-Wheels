@@ -94,9 +94,22 @@ function cadastrarBiker(req, res) {
     }
 }
 
+function buscarPorIdRank(req, res) {
+    var filtro = req.body.filtroServer;
+
+    usuarioModel.procurarIdRank(filtro)
+        .then(function (resposta) {
+            res.json(resposta)
+        })
+        .catch(function (erro) {
+            console.error(erro);
+        })
+}
+
 
 module.exports = {
     testar,
     cadastrarConquista,
-    cadastrarBiker
+    cadastrarBiker,
+    buscarPorIdRank
 }

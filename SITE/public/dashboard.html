@@ -15,7 +15,7 @@
     <title>Dashboard</title>
 </head>
 
-<body>
+<body onload="buscarDados()">
 
     <!-- Barra de navegação -->
     <div class="navbar">
@@ -109,7 +109,7 @@
                 </div>
             </div>
         </section>
-        
+
 
         <!-- RANKING -->
         <section id="contentRanking">
@@ -119,138 +119,57 @@
                     <h1>BIKERS RANKING</h1>
                 </div>
                 <div class="ranking-content">
-                    <div class="ranking column">
-                        <label>ID</label>
-                        <label>NOME</label>
-                        <label>MODALIDADE</label>
-                        <label>DISTÂNCIA</label>
-                        <label>SALTO</label>
-                        <label>COMPETIÇÕES</label>
-                        <label>MEDALHAS</label>
-                        <label>VITÓRIAS</label>
-                    </div>
+                    <table>
+                        <tr class="row column-title">
+                            <td class="td-id">ID</td>
+                            <td class="td-nome">NOME</td>
+                            <td>MODALIDADE</td>
+                            <td>VELOCIDADE</td>
+                            <td>DISTÂNCIA</td>
+                            <td>SALTO</td>
+                            <td>COMPETIÇÕES</td>
+                            <td>MEDALHAS</td>
+                            <td>VITÓRIAS</td>
+                        </tr>
 
-                    <div class="list-ranking">
+                        <tr class="row top3 sup">
+                            <td class="td-id">1</td>
+                            <td class="td-nome">Jairo Pingola</td>
+                            <td>Downhill</td>
+                            <td>80km/h</td>
+                            <td>62km</td>
+                            <td>15m</td>
+                            <td>19</td>
+                            <td>12</td>
+                            <td>7</td>
+                        </tr>
 
-                        <div class="ranking top supborder">
-                            <label class="l-id">1</label>
-                            <label class="l-nome">Jairo Pingola</label>
-                            <label>Downhill</label>
-                            <label>88km</label>
-                            <label>23.8m</label>
-                            <label>15</label>
-                            <label>12</label>
-                            <label>9</label>
-                        </div>
+                        <tr class="row top3">
+                            <td class="td-id">1</td>
+                            <td class="td-nome">Epaminondas Roda Mole</td>
+                            <td>MTB</td>
+                            <td>78km/h</td>
+                            <td>167km</td>
+                            <td>5m</td>
+                            <td>11</td>
+                            <td>8</td>
+                            <td>5</td>
+                        </tr>
 
-                        <div class="ranking top">
-                            <label class="l-id">2</label>
-                            <label class="l-nome">Epaminondas Roda Mole</label>
-                            <label>Speed</label>
-                            <label>256km</label>
-                            <label>1m</label>
-                            <label>4</label>
-                            <label>1</label>
-                            <label>0</label>
-                        </div>
+                        <tr class="row top3 inf">
+                            <td class="td-id">1</td>
+                            <td class="td-nome">Juca Ghado</td>
+                            <td>Speed</td>
+                            <td>120km/h</td>
+                            <td>250km</td>
+                            <td>1m</td>
+                            <td>11</td>
+                            <td>8</td>
+                            <td>5</td>
+                        </tr>
 
-                        <div class="ranking top infborder">
-                            <label class="l-id">3</label>
-                            <label class="l-nome">Juca Ghado</label>
-                            <label>MTB</label>
-                            <label>156km</label>
-                            <label>2m</label>
-                            <label>28</label>
-                            <label>11</label>
-                            <label>2</label>
-                        </div>
-
-
-                    </div>
-
-                    <div class="list-ranking">
-
-                        <div class="ranking supborder">
-                            <label class="l-id">4</label>
-                            <label class="l-nome">Jairo Pingola</label>
-                            <label>Downhill</label>
-                            <label>88km</label>
-                            <label>23.8m</label>
-                            <label>15</label>
-                            <label>12</label>
-                            <label>9</label>
-                        </div>
-
-                        <div class="ranking">
-                            <label class="l-id">5</label>
-                            <label class="l-nome">Epaminondas Roda Mole</label>
-                            <label>Speed</label>
-                            <label>256km</label>
-                            <label>1m</label>
-                            <label>4</label>
-                            <label>1</label>
-                            <label>0</label>
-                        </div>
-
-                        <div class="ranking">
-                            <label class="l-id">6</label>
-                            <label class="l-nome">Epaminondas Roda Mole</label>
-                            <label>Speed</label>
-                            <label>256km</label>
-                            <label>1m</label>
-                            <label>4</label>
-                            <label>1</label>
-                            <label>0</label>
-                        </div>
-
-                        <div class="ranking">
-                            <label class="l-id">7</label>
-                            <label class="l-nome">Epaminondas Roda Mole</label>
-                            <label>Speed</label>
-                            <label>256km</label>
-                            <label>1m</label>
-                            <label>4</label>
-                            <label>1</label>
-                            <label>0</label>
-                        </div>
-
-                        <div class="ranking">
-                            <label class="l-id">8</label>
-                            <label class="l-nome">Epaminondas Roda Mole</label>
-                            <label>Speed</label>
-                            <label>256km</label>
-                            <label>1m</label>
-                            <label>4</label>
-                            <label>1</label>
-                            <label>0</label>
-                        </div>
-
-                        <div class="ranking">
-                            <label class="l-id">9</label>
-                            <label class="l-nome">Epaminondas Roda Mole</label>
-                            <label>Speed</label>
-                            <label>256km</label>
-                            <label>1m</label>
-                            <label>4</label>
-                            <label>1</label>
-                            <label>0</label>
-                        </div>
-
-                        <div class="ranking infborder">
-                            <label class="l-id">10</label>
-                            <label class="l-nome">Juca Ghado</label>
-                            <label>MTB</label>
-                            <label>156km</label>
-                            <label>2m</label>
-                            <label>28</label>
-                            <label>11</label>
-                            <label>2</label>
-                        </div>
-
-
-                    </div>
+                    </table>
                 </div>
-            </div>
         </section>
     </div>
 
@@ -270,7 +189,7 @@
         img = '<img src="img/atlheteFabio.png" alt="">'
     } else if (n == 4) {
         img = '<img src="img/atlheteDanny.png" alt="">'
-    } else{
+    } else {
         img = '<img src="img/atlheteJonas.png" alt="">'
     }
 

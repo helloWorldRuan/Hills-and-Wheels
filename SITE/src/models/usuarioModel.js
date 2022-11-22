@@ -38,10 +38,14 @@ function cadastrarBiker(nome, gender, date, pais, modal) {
     return database.executar(instrucao);
 }
 
+function procurarIdRank(filtro) {
+    return database.executar(`SELECT idBiker FROM Biker order by ${filtro === undefined ? 'idBiker' : filtro} asc limit 3;`)
+}
 
 module.exports = {
     entrar,
     cadastrarFeito,
     cadastrarBiker,
     listar,
+    procurarIdRank
 };
