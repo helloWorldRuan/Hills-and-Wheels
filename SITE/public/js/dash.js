@@ -56,8 +56,7 @@ function changeInsight() {
 function buscarDados(filtro) {
     rankingBody.innerHTML = ""
 
-
-    fetch(`/usuarios/buscarPorId/${filtro}`, {
+    fetch(`/usuarios/selectData/${filtro}`, {
         headers: {
             "Content-Type": "application/json"
         },
@@ -65,7 +64,6 @@ function buscarDados(filtro) {
         .then(function (resposta) {
             resposta.json()
                 .then(function (resposta) {
-
                     console.log(resposta)
 
                     for (var i = 0; i < resposta.length; i++) {
@@ -122,6 +120,28 @@ function buscarDados(filtro) {
         })
         .catch(function (erro) {
             console.error(erro);
+        })
+
+    fetch("/usuarios/selectInsights", {
+        headers: {
+            "Content-Type": "application/json"
+        },
+    })
+        .then(function (resposta) {
+            resposta.json()
+                .then(function (resposta) {
+                    console.log(resposta)
+
+                    var bikers = resposta[0].Bikers
+                    var km = resposta[0].KM
+                    var paises = resposta[0].Paises
+
+                    insightBikers.innerHTML = bikers
+                    insightKM.innerHTML = km 
+                    insightPais.innerHTML = paises
+
+
+                })
         })
 }
 

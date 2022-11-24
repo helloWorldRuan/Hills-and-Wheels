@@ -97,11 +97,9 @@ function cadastrarBiker(req, res) {
     }
 }
 
-function buscarPorIdRank(req, res) {
+function selectData(req, res) {
     var filtro = req.params.filtro;
     var order = 'DESC'
-
-    console.log(filtro)
     
     if (filtro == 'idBiker') {
         order = 'ASC'
@@ -110,7 +108,7 @@ function buscarPorIdRank(req, res) {
     } else if (filtro == 'modalidade') {
         order = 'ASC'
     }
-    usuarioModel.procurarIdRank(filtro, order)
+    usuarioModel.selectData(filtro, order)
         .then(function (resposta) {
             res.json(resposta)
         })
@@ -119,10 +117,22 @@ function buscarPorIdRank(req, res) {
         })
 }
 
+function selectInsights(req, res){
+    
+    usuarioModel.selectInsights()
+        .then(function (resposta){
+            res.json(resposta)
+        })
+        .catch(function (erro){
+            console.error(erro)
+        })
+}
+
 
 module.exports = {
     testar,
     cadastrarConquista,
     cadastrarBiker,
-    buscarPorIdRank
+    selectData,
+    selectInsights
 }

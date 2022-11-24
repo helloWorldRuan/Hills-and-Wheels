@@ -258,6 +258,11 @@ body {
     transition: .3s linear;
 }
 
+.insight h1{
+    position: relative;
+    bottom: 1px;
+}
+
 .insight:hover {
     background-color: #fc3512;
     border-radius: 5px;
@@ -389,12 +394,17 @@ table {
     margin-bottom: .5rem;
 }
 
-.column-title>td {
+.column-title td {
     position: relative;
     padding: .6rem .1rem;
     cursor: pointer;
     transition: .2s ease;
 }
+
+.column-title td:hover{
+    background-color: rgb(29, 29, 29);
+}
+
 
 .row:hover {
     background-color: #ff3624;
@@ -403,7 +413,6 @@ table {
 .column-title:hover {
     background-color: var(--black);
 }
-
 
 .row .td-id {
     width: 3%;

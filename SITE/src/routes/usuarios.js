@@ -15,8 +15,12 @@ router.post("/cadastrarBiker", function (req, res){
     usuarioController.cadastrarBiker(req, res);
 })
 
-router.get("/buscarPorId/:filtro", function (req, res) {
-    usuarioController.buscarPorIdRank(req, res);
+router.get("/selectData/:filtro", function (req, res) {
+    usuarioController.selectData(req, res);
 });
+
+router.get("/selectInsights" ,function (req, res){
+    usuarioController.selectInsights(req, res);
+})
 
 module.exports = router;
