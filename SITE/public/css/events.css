@@ -230,6 +230,10 @@ select, option{
     outline: 0;
 }
 
+select:focus{
+    background-color: var(--orange);
+}
+
 .events-list{
     width: 70vw;
     background-color: var(--white);
@@ -247,6 +251,15 @@ select, option{
     justify-content: center;
     align-items: center;
     gap: 5rem;
+    animation: reveal .5s ease;
+    transition: .2s ease;
+}
+
+@keyframes reveal{
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
 }
 
 .no-found{
