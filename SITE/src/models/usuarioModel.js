@@ -22,24 +22,32 @@ function cadastrarFeito(distance, jump, speed, champ, bike, aro, medal, win, msg
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarFeito():", distance, jump, speed, champ, bike, aro, medal, win, msg);
     
     var instrucao = `
-        INSERT INTO Conquista (distancia, salto, velocidade, camps, medalhas, vitorias, bike, aro, msg ) VALUES ('${distance}','${jump}','${speed}','${champ}','${medal}','${win}','${bike}','${aro}', '${msg}');
+        INSERT INTO Conquista (distancia, salto, velocidade, camps, medalhas, vitorias, bike, aro, msg ) VALUES (${distance},${jump},${speed},${champ},${medal},${win},'${bike}','${aro}', '${msg}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function cadastrarBiker(nome, gender, date, pais, modal) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarBiker():", nome, gender, date, pais, modal);
+function cadastrarBiker(nome, gender, date, pais, modal, conquista) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarBiker():", nome, gender, date, pais, modal, conquista);
     
     var instrucao = `
-        INSERT INTO Biker (nome, genero, dtNasc, pais, fkModalidade) VALUES ('${nome}','${gender}','${date}','${pais}','${modal}');
+        INSERT INTO Biker (nome, genero, dtNasc, pais, fkModalidade, fkConquista) VALUES ('${nome}','${gender}','${date}','${pais}',${modal}, ${conquista});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function procurarIdRank(filtro) {
-    return database.executar(`SELECT idBiker FROM Biker order by ${filtro === undefined ? 'idBiker' : filtro} asc limit 3;`)
+function procurarIdRank(filtro, order) {
+console.log(filtro, order);
+    var instrucao = 
+    `
+    SELECT  b.idBiker, b.nome, m.nome modalidade, c.* FROM Biker b 
+    JOIN Modalidade m ON b.fkModalidade = m.idModalidade 
+    JOIN Conquista c ON b.fkConquista = c.idConquista
+    ORDER BY ${filtro == undefined ? 'idBiker' : filtro} ${order};
+    `;
+    return database.executar(instrucao)
 }
 
 module.exports = {

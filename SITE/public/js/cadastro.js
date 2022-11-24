@@ -5,6 +5,7 @@ function cadastrar() {
         dateServer: in_date.value,
         paisServer: in_pais.value,
         modalServer: sl_modal.value,
+        fkConquistaServer: ''
     }
 
     var Conquista = {
@@ -15,8 +16,8 @@ function cadastrar() {
         jumpServer: Number(in_jump.value),
         speedServer: Number(in_speed.value),
         champServer: Number(in_champ.value),
-        medalServer: Number(in_champ.value),
-        winServer: Number(in_champ.value)
+        medalServer: Number(in_medal.value),
+        winServer: Number(in_win.value)
     }
 
     // if (!Conquista.bikeServer, !Conquista.aroServer, !Conquista.msgServer, !Conquista.distanceServer, !Conquista.jumpServer, !Conquista.speedServer, !Conquista.champServer, !Conquista.medalServer, !Conquista.winServer) {
@@ -24,6 +25,8 @@ function cadastrar() {
     //     alert('Preencha todos os campos!')
     //     return false;
     // }
+
+    var idConquista
 
     fetch("/usuarios/cadastrarConquista", {
         method: "POST",
@@ -36,9 +39,13 @@ function cadastrar() {
 
         if (resposta.ok) {
             resposta.json()
-                .then(function (respostaFormatada) {
-                    console.log("Conquista: ", respostaFormatada)
+                .then(function (resposta) {
+                    console.log("Conquista: ", resposta)
+                    idConquista = resposta.insertId
 
+                    Biker.fkConquistaServer = idConquista
+
+                    
                     fetch("/usuarios/cadastrarBiker", {
                         method: "POST",
                         headers: {
@@ -47,8 +54,6 @@ function cadastrar() {
                         body: JSON.stringify(Biker)
                     }).then(function (resposta) {
                         console.log("resposta: ", resposta)
-
-                        var idConquista = resposta.insertID
 
                         if (resposta.ok) {
                             resposta.json()

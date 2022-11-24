@@ -15,7 +15,7 @@ router.post("/cadastrarBiker", function (req, res){
     usuarioController.cadastrarBiker(req, res);
 })
 
-router.get("/buscarPorId", function (req, res) {
+router.get("/buscarPorId/:filtro", function (req, res) {
     usuarioController.buscarPorIdRank(req, res);
 });
 

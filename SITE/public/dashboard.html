@@ -15,7 +15,7 @@
     <title>Dashboard</title>
 </head>
 
-<body onload="buscarDados()">
+<body onload="buscarDados('idBiker')">
 
     <!-- Barra de navegação -->
     <div class="navbar">
@@ -119,54 +119,22 @@
                     <h1>BIKERS RANKING</h1>
                 </div>
                 <div class="ranking-content">
-                    <table>
+                    <table id="table">
                         <tr class="row column-title">
-                            <td class="td-id">ID</td>
-                            <td class="td-nome">NOME</td>
-                            <td>MODALIDADE</td>
-                            <td>VELOCIDADE</td>
-                            <td>DISTÂNCIA</td>
-                            <td>SALTO</td>
-                            <td>COMPETIÇÕES</td>
-                            <td>MEDALHAS</td>
-                            <td>VITÓRIAS</td>
+                            <td onclick="buscarDados('idBiker')" name="bnt-column" class="td-id">ID</td>
+                            <td onclick="buscarDados('b.nome')" name="bnt-column" class="td-nome">NOME</td>
+                            <td onclick="buscarDados('modalidade')" name="bnt-column">MODALIDADE</td>
+                            <td onclick="buscarDados('c.velocidade')" name="bnt-column">VELOCIDADE</td>
+                            <td onclick="buscarDados('c.distancia')" name="bnt-column">DISTÂNCIA</td>
+                            <td onclick="buscarDados('c.salto')" name="bnt-column">SALTO</td>
+                            <td onclick="buscarDados('c.camps')" name="bnt-column">COMPETIÇÕES</td>
+                            <td onclick="buscarDados('c.medalhas')" name="bnt-column">MEDALHAS</td>
+                            <td onclick="buscarDados('c.vitorias')" name="bnt-column">VITÓRIAS</td>
                         </tr>
-
-                        <tr class="row top3 sup">
-                            <td class="td-id">1</td>
-                            <td class="td-nome">Jairo Pingola</td>
-                            <td>Downhill</td>
-                            <td>80km/h</td>
-                            <td>62km</td>
-                            <td>15m</td>
-                            <td>19</td>
-                            <td>12</td>
-                            <td>7</td>
-                        </tr>
-
-                        <tr class="row top3">
-                            <td class="td-id">1</td>
-                            <td class="td-nome">Epaminondas Roda Mole</td>
-                            <td>MTB</td>
-                            <td>78km/h</td>
-                            <td>167km</td>
-                            <td>5m</td>
-                            <td>11</td>
-                            <td>8</td>
-                            <td>5</td>
-                        </tr>
-
-                        <tr class="row top3 inf">
-                            <td class="td-id">1</td>
-                            <td class="td-nome">Juca Ghado</td>
-                            <td>Speed</td>
-                            <td>120km/h</td>
-                            <td>250km</td>
-                            <td>1m</td>
-                            <td>11</td>
-                            <td>8</td>
-                            <td>5</td>
-                        </tr>
+                    
+                        <tbody id="rankingBody">
+                           
+                        </tbody>
 
                     </table>
                 </div>

@@ -386,6 +386,10 @@ select:focus {
     background-color: var(--yellow);
 }
 
+.light:focus{
+    background-color: var(--yellow);
+}
+
 input[type="date"] {
     width: 65%;
     color: var(--yellow);

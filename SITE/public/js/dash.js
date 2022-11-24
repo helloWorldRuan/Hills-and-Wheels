@@ -51,27 +51,78 @@ function changeInsight() {
     }
 }
 
+
+
 function buscarDados(filtro) {
-    fetch('/usuarios/buscarPorId', {
+    rankingBody.innerHTML = ""
+
+
+    fetch(`/usuarios/buscarPorId/${filtro}`, {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(filtro)
     })
-    .then(function (resposta) {
-        resposta.json()
-            .then(function (json) {
-                for(var i = 0; i < json.length; i++) {
-                    ranking_top.innerHTML = json[i].idBiker
-                }
-            })
-            .catch(function (erro) {
-                console.error(erro);
-            })
-    })
-    .catch(function (erro) {
-        console.error(erro);
-    })
+        .then(function (resposta) {
+            resposta.json()
+                .then(function (resposta) {
+
+                    console.log(resposta)
+
+                    for (var i = 0; i < resposta.length; i++) {
+
+                        var biker = resposta[i]
+
+                        if (i < 3) {
+                            rankingBody.innerHTML += `
+                            <tr name="top" class="row top3">
+                                <td class="td-id">${biker.idBiker}</td>
+                                <td class="td-nome">${biker.nome}</td>
+                                <td>${biker.modalidade}</td>
+                                <td>${biker.velocidade}km/h</td>
+                                <td>${biker.distancia}km</td>
+                                <td>${biker.salto}m</td>
+                                <td>${biker.camps}</td>
+                                <td>${biker.medalhas}</td>
+                                <td>${biker.vitorias}</td>
+                            </tr>
+                            `;
+
+
+                        } else {
+                            rankingBody.innerHTML += `
+                                <tr name="rank" class="row rank">
+                                    <td class="td-id">${biker.idBiker}</td>
+                                    <td class="td-nome">${biker.nome}</td>
+                                    <td>${biker.modalidade}</td>
+                                    <td>${biker.velocidade}km/h</td>
+                                    <td>${biker.distancia}km</td>
+                                    <td>${biker.salto}m</td>
+                                    <td>${biker.camps}</td>
+                                    <td>${biker.medalhas}</td>
+                                    <td>${biker.vitorias}</td>
+                                </tr>
+                                `;
+                        }
+                    }
+
+                    var top = document.getElementsByName("top")
+                    top[0].style = 'border-radius: 5px 5px 0 0'
+                    top[top.length - 1].style = 'border-radius: 0 0 5px 5px'
+
+                    var rank = document.getElementsByName("rank")
+                    rank[0].style = 'border-radius: 5px 5px 0 0; margin-top: 1rem'
+                    rank[rank.length - 1].style = 'border-radius: 0 0 5px 5px'
+
+                })
+
+
+                .catch(function (erro) {
+                    console.error(erro);
+                })
+        })
+        .catch(function (erro) {
+            console.error(erro);
+        })
 }
 
 

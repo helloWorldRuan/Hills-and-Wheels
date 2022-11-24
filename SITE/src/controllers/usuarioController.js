@@ -27,15 +27,15 @@ function cadastrarConquista(req, res) {
         res.status(400).send("Seu jump está undefined!");
     } else if (jump == undefined) {
         res.status(400).send("Seu jump está undefined!");
-    }else if (jump == undefined) {
+    } else if (jump == undefined) {
         res.status(400).send("Seu jump está undefined!");
-    }else if (jump == undefined) {
+    } else if (jump == undefined) {
         res.status(400).send("Seu jump está undefined!");
-    }else if (jump == undefined) {
+    } else if (jump == undefined) {
         res.status(400).send("Seu jump está undefined!");
-    }else if (jump == undefined) {
+    } else if (jump == undefined) {
         res.status(400).send("Seu jump está undefined!");
-    }else if (jump == undefined) {
+    } else if (jump == undefined) {
         res.status(400).send("Seu jump está undefined!");
     } else {
         usuarioModel.cadastrarFeito(distance, jump, speed, champ, bike, aro, medal, win, msg)
@@ -62,8 +62,11 @@ function cadastrarBiker(req, res) {
     var date = req.body.dateServer;
     var pais = req.body.paisServer;
     var modal = req.body.modalServer;
+    var conquista = req.body.fkConquistaServer
 
-    console.log(nome, gender, date, pais, modal)
+    console.log('fkConquista', conquista)
+
+    console.log(nome, gender, date, pais, modal, conquista)
 
     if (nome == undefined) {
         res.status(400).send("Seu nome está undefined!");
@@ -71,12 +74,12 @@ function cadastrarBiker(req, res) {
         res.status(400).send("Seu gender está undefined!");
     } else if (date == undefined) {
         res.status(400).send("Seu date está undefined!");
-    }else if (pais == undefined) {
+    } else if (pais == undefined) {
         res.status(400).send("Seu pais está undefined!");
-    }else if (modal == undefined) {
+    } else if (modal == undefined) {
         res.status(400).send("Seu modal está undefined!");
     } else {
-        usuarioModel.cadastrarBiker(nome, gender, date, pais, modal)
+        usuarioModel.cadastrarBiker(nome, gender, date, pais, modal, conquista)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -95,9 +98,19 @@ function cadastrarBiker(req, res) {
 }
 
 function buscarPorIdRank(req, res) {
-    var filtro = req.body.filtroServer;
+    var filtro = req.params.filtro;
+    var order = 'DESC'
 
-    usuarioModel.procurarIdRank(filtro)
+    console.log(filtro)
+    
+    if (filtro == 'idBiker') {
+        order = 'ASC'
+    } else if (filtro == 'b.nome') {
+        order = 'ASC'
+    } else if (filtro == 'modalidade') {
+        order = 'ASC'
+    }
+    usuarioModel.procurarIdRank(filtro, order)
         .then(function (resposta) {
             res.json(resposta)
         })
