@@ -41,10 +41,18 @@ FOREIGN KEY (fkConquista) REFERENCES Conquista (idConquista)
 
 
 SELECT * FROM Conquista;
+SELECT * FROM Biker;
+SELECT * FROM Conquista;
 
+-- SELECT RANKING
 SELECT  b.idBiker, b.nome, m.nome, c.* FROM Biker b 
 JOIN Modalidade m ON b.fkModalidade = m.idModalidade 
 JOIN Conquista c ON b.fkConquista = c.idConquista;
 
-SELECT * FROM Modalidade;
+-- Quantidade de usuários (Bikers) | Kilometros totais percorridos | Quantidade de países distintos
+SELECT COUNT(idBiker) Bikers, COUNT(pais) Paises, SUM(distancia) KM FROM Biker
+JOIN Conquista ON fkConquista = idCOnquista;
+
+
+
 
