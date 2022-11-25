@@ -609,12 +609,12 @@
         listEvents.push(eventsModel)
     }
 
+    // Filtro de eventos
     function filter() {
         eventContent.innerHTML = ""
 
         var modalSearch = sl_modal.value
         var localSearch = sl_local.value
-
 
         // Mostrar todos os eventos para filtros vazios
         if (modalSearch == '' && localSearch == "") {
@@ -663,6 +663,7 @@
         }
     }
 
+    // Efeitos de scroll
     ScrollReveal().reveal('.reveal', {
         distance: '50px',
         opacity: 0,

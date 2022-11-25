@@ -452,3 +452,14 @@ table {
         transform: translateY(20px);
     }
 }
+
+.logo{
+    margin: 1rem 0 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo a{
+    width: max-content;
+}

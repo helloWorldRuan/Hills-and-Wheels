@@ -90,8 +90,6 @@ function selectPublicAge(){
         WHERE YEAR(dtNasc) >= 1950 AND YEAR(dtNasc) <= 1960;
     `
 
-    console.log(instrucao)
-
     return database.executar(instrucao)
 }
 
