@@ -453,13 +453,13 @@ table {
     }
 }
 
-.logo{
+.rankLogo{
     margin: 1rem 0 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.logo a{
+.rankLogo a{
     width: max-content;
 }
