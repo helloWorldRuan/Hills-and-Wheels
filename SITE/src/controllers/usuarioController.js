@@ -1,11 +1,5 @@
 var usuarioModel = require("../models/usuarioModel");
 
-var sessoes = [];
-
-function testar(req, res) {
-    console.log("ENTRAMOS NA usuarioController");
-    res.json("ESTAMOS FUNCIONANDO!");
-}
 
 function cadastrarConquista(req, res) {
     var distance = req.body.distanceServer;
@@ -18,25 +12,26 @@ function cadastrarConquista(req, res) {
     var win = req.body.winServer;
     var msg = req.body.msgServer;
 
-    console.log(distance, jump, speed, champ, bike, aro, medal, win, msg)
-
-
     if (distance == undefined) {
         res.status(400).send("Seu distance está undefined!");
     } else if (jump == undefined) {
         res.status(400).send("Seu jump está undefined!");
-    } else if (jump == undefined) {
-        res.status(400).send("Seu jump está undefined!");
-    } else if (jump == undefined) {
-        res.status(400).send("Seu jump está undefined!");
-    } else if (jump == undefined) {
-        res.status(400).send("Seu jump está undefined!");
-    } else if (jump == undefined) {
-        res.status(400).send("Seu jump está undefined!");
-    } else if (jump == undefined) {
-        res.status(400).send("Seu jump está undefined!");
-    } else if (jump == undefined) {
-        res.status(400).send("Seu jump está undefined!");
+    } else if (speed == undefined) {
+        res.status(400).send("Seu speed está undefined!");
+    } else if (champ == undefined) {
+        res.status(400).send("Seu champ está undefined!");
+    } else if (bike == undefined) {
+        res.status(400).send("Seu bike está undefined!");
+    } else if (aro == undefined) {
+        res.status(400).send("Seu aro está undefined!");
+    } else if (medal == undefined) {
+        res.status(400).send("Seu medal está undefined!");
+    } else if (win == undefined) {
+        res.status(400).send("Seu win está undefined!");
+    } else if (msg == undefined) {
+        res.status(400).send("Seu msg está undefined!");
+    } else if (win == undefined) {
+        res.status(400).send("Seu win está undefined!");
     } else {
         usuarioModel.cadastrarFeito(distance, jump, speed, champ, bike, aro, medal, win, msg)
             .then(
@@ -100,7 +95,7 @@ function cadastrarBiker(req, res) {
 function selectData(req, res) {
     var filtro = req.params.filtro;
     var order = 'DESC'
-    
+
     if (filtro == 'idBiker') {
         order = 'ASC'
     } else if (filtro == 'b.nome') {
@@ -117,22 +112,54 @@ function selectData(req, res) {
         })
 }
 
-function selectInsights(req, res){
-    
+function selectInsights(req, res) {
     usuarioModel.selectInsights()
-        .then(function (resposta){
+        .then(function (resposta) {
             res.json(resposta)
         })
-        .catch(function (erro){
+        .catch(function (erro) {
             console.error(erro)
         })
 }
 
+function selectPublicGender(req, res) {
+    usuarioModel.selectPublicGender()
+        .then(function (resposta) {
+            res.json(resposta)
+        })
+        .catch(function (erro) {
+            console.error(erro)
+        })
+}
+
+function selectPublicModal(req, res) {
+    usuarioModel.selectPublicModal()
+        .then(function (resposta) {
+            res.json(resposta)
+        })
+        .catch(function (erro) {
+            console.error(erro)
+        })
+}
+
+function selectPublicAge(req, res) {
+    usuarioModel.selectPublicAge()
+        .then(function (resposta) {
+            res.json(resposta)
+        })
+        .catch(function (erro) {
+            console.error(erro)
+        })
+
+}
+
 
 module.exports = {
-    testar,
     cadastrarConquista,
     cadastrarBiker,
     selectData,
-    selectInsights
+    selectInsights,
+    selectPublicGender,
+    selectPublicModal,
+    selectPublicAge
 }

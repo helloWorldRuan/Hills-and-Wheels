@@ -131,9 +131,9 @@
                             <td onclick="buscarDados('c.medalhas')" name="bnt-column">MEDALHAS</td>
                             <td onclick="buscarDados('c.vitorias')" name="bnt-column">VITÓRIAS</td>
                         </tr>
-                    
+
                         <tbody id="rankingBody">
-                           
+
                         </tbody>
 
                     </table>
@@ -142,10 +142,11 @@
     </div>
 
 </body>
-
 </html>
 
 <script>
+    
+    // Carrega aleatoriamente a imagem do atleta que compõe os insights
     var n = parseInt(1 + Math.random() * 5)
     var img = ""
 
@@ -163,10 +164,8 @@
 
     imgAthlet.innerHTML = img
 
-    console.log(n)
-</script>
 
-<script>
+    // Efeitos de scroll
     ScrollReveal().reveal('.reveal', {
         duration: 1000,
         distance: '200px',
@@ -174,94 +173,165 @@
         opacity: 0
     })
 </script>
-<script>
-
-    // Gráfico de público por gênero
-    const labelsGender = [
-        'Masculino',
-        'Feminino',
-    ];
-
-    const dataGender = {
-        labels: labelsGender,
-        datasets: [{
-            label: 'Público por gênero',
-            backgroundColor: ['#FF2C18', '#5404FF'],
-            borderColor: '#171717',
-            data: [86, 64],
-        }]
-    };
-
-    const configGender = {
-        type: 'doughnut',
-        data: dataGender,
-        options: {}
-    };
-
-
-    //Gráfico de público por modalidade
-    const labelsModal = [
-        'Downhill',
-        'MTB',
-        'Speed',
-        'BMX',
-        'Bike Trial',
-    ];
-
-
-    const dataModal = {
-        labels: labelsModal,
-        datasets: [{
-            label: 'Público por modalidade',
-            backgroundColor: ['#FF2C18'],
-            borderColor: '#171717',
-            data: [15, 29, 21, 10, 30],
-        }]
-    };
-
-    const configModal = {
-        type: 'pie',
-        data: dataModal,
-        options: {}
-    };
-
-    //Gráfico de público por idade
-    const labelsAge = [
-        'Masculino',
-        'Feminino'
-    ];
-
-    const dataAge = {
-        labels: labelsAge,
-        datasets: [{
-            label: 'Público por idade',
-            backgroundColor: ['#FF2C18', '#5404FF'],
-            borderColor: '#171717',
-            data: [15, 29, 21, 10, 30],
-        }]
-    };
-
-    const configAge = {
-        type: 'bar',
-        data: dataAge,
-        options: {}
-    };
-
-</script>
 
 <script>
-    const chartGender = new Chart(
-        document.getElementById('chartGender'),
-        configGender
-    );
+    // Gráfico de público por gênero ----------------------------------------------
+    fetch("/usuarios/selectPublicGender", {
+        header: {
+            "Content-Type": "application"
+        }
+    })
+        .then(function (resposta) {
+            resposta.json()
+                .then(function (resposta) {
+                    console.log(("Gráfico Gender:", resposta));
 
-    const chartModal = new Chart(
-        document.getElementById('chartModal'),
-        configModal
-    );
+                    var data = []
 
-    const chartAgr = new Chart(
-        document.getElementById('chartAge'),
-        configAge
-    );
+                    for (var i = 0; i < resposta.length; i++) {
+                        data.push(resposta[i].gender)
+                    }
+
+                    plotarChartGender(data)
+                })
+        })
+
+    function plotarChartGender(data) {
+
+        const labelsGender = [
+            'Masculino',
+            'Feminino',
+        ];
+
+        const dataGender = {
+            labels: labelsGender,
+            datasets: [{
+                label: 'Público por gênero',
+                backgroundColor: ['#FF2C18', '#5404FF'],
+                borderColor: '#171717',
+                data: data,
+            }]
+        };
+
+        const configGender = {
+            type: 'doughnut',
+            data: dataGender,
+            options: {}
+        };
+
+        return new Chart(
+            document.getElementById('chartGender'),
+            configGender
+        );
+
+    }
+
+
+    //Gráfico de público por modalidade --------------------------------------------
+    fetch("/usuarios/selectPublicModal", {
+        header: {
+            "Content-Type": "application/json"
+        }
+    })
+        .then(function (resposta) {
+            resposta.json()
+                .then(function (resposta) {
+                    console.log("Gráfico Modal:", resposta)
+
+                    var labels = []
+                    var data = []
+
+                    for (var i = 0; i < resposta.length; i++) {
+                        labels.push(resposta[i].modal)
+                        data.push(resposta[i].bikers)
+                    }
+
+                    console.log(labels, data)
+
+                    plotarChartModal(labels, data)
+                })
+        })
+
+    function plotarChartModal(labels, data) {
+
+        const labelsModal = labels;
+
+        const dataModal = {
+            labels: labelsModal,
+            datasets: [{
+                label: 'Público por modalidade',
+                backgroundColor: ['#FF2C18', '#BF2011', '#80150B', '#5404FF', '#5E2EA6'],
+                borderColor: '#171717',
+                data: data,
+            }]
+        }
+
+        const configModal = {
+            type: 'pie',
+            data: dataModal,
+            options: {}
+        }
+
+        const chartModal = new Chart(
+            document.getElementById('chartModal'),
+            configModal
+        )
+    }
+
+
+    //Gráfico de público por idade -------------------------------------------------
+    fetch("/usuarios/selectPublicAge", {
+        header: {
+            "Content-Type": "application/json"
+        }
+    })
+        .then(function (resposta) {
+            resposta.json()
+                .then(function (resposta) {
+                    console.log("Gráfico Idade:", resposta)
+
+                    var data = []
+
+                    for (var i = 0; i < resposta.length; i++) {
+                        data.push(resposta[i].idade)
+                    }
+
+                    plotarChartAge(data)
+
+                })
+        })
+    
+    function plotarChartAge(data) {
+
+        const labelsAge = [
+            '10-20',
+            '20-30',
+            '30-40',
+            '50-60',
+            '60-70',
+        ]
+
+        const dataAge = {
+            labels: labelsAge,
+            datasets: [{
+                label: 'Público por idade (Anos)',
+                backgroundColor: ['#FF2C18', '#5404FF'],
+                borderColor: '#171717',
+                data: data,
+            }]
+        };
+
+        const configAge = {
+            type: 'bar',
+            data: dataAge,
+            options: {
+            }
+        };
+
+        const chartAgr = new Chart(
+            document.getElementById('chartAge'),
+            configAge
+        );
+    }
+
 </script>

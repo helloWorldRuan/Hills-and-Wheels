@@ -258,7 +258,7 @@ body {
     transition: .3s linear;
 }
 
-.insight h1{
+.insight h1 {
     position: relative;
     bottom: 1px;
 }
@@ -368,7 +368,7 @@ table {
 
 .row {
     color: white;
-    background-color: #ff6146;
+    background-color: #5404FF;
     padding: 1rem;
     height: 50px;
     display: flex;
@@ -379,11 +379,33 @@ table {
     transition: .2s ease;
 }
 
-
-.row>td {
+.row td {
     width: 8%;
     border-radius: 5px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    transition: .2s ease;
+}
+
+.row:hover {
+    background-color: #6c28ff;
+}
+
+.row td:hover {
+    /* font-size: .85rem; */
+    font-weight: 600;
+    background-color: #7738ffd5;
+}
+
+.row .td-id {
+    width: 3%;
+}
+
+.row .td-nome {
+    width: 10%;
 }
 
 .column-title {
@@ -395,35 +417,33 @@ table {
 }
 
 .column-title td {
+    height: max-content;
     position: relative;
     padding: .6rem .1rem;
     cursor: pointer;
-    transition: .2s ease;
+    font-weight: 500;
 }
 
-.column-title td:hover{
+.column-title td:hover {
+    font-size: .6rem;
+    font-weight: 500;
     background-color: rgb(29, 29, 29);
-}
-
-
-.row:hover {
-    background-color: #ff3624;
 }
 
 .column-title:hover {
     background-color: var(--black);
 }
 
-.row .td-id {
-    width: 3%;
-}
-
-.row .td-nome {
-    width: 10%;
-}
-
 .top3 {
     background-color: var(--orange);
+}
+
+.top3:hover {
+    background-color: #ff3624;
+}
+
+.top3 td:hover {
+    background-color: #ff4231;
 }
 
 @keyframes reveal {

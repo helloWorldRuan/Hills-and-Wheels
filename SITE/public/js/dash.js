@@ -1,4 +1,5 @@
 
+// 1. Alternar entre tópicos
 var i = 0
 var j = 0
 
@@ -51,11 +52,11 @@ function changeInsight() {
     }
 }
 
-
-
+// 2. Ranking e filtro por colunas
 function buscarDados(filtro) {
     rankingBody.innerHTML = ""
 
+    // Ordenando filtro pela ordem das colunas ---------------------------------
     fetch(`/usuarios/selectData/${filtro}`, {
         headers: {
             "Content-Type": "application/json"
@@ -64,7 +65,7 @@ function buscarDados(filtro) {
         .then(function (resposta) {
             resposta.json()
                 .then(function (resposta) {
-                    console.log(resposta)
+                    console.log("Ranking:", resposta)
 
                     for (var i = 0; i < resposta.length; i++) {
 
@@ -84,8 +85,6 @@ function buscarDados(filtro) {
                                 <td>${biker.vitorias}</td>
                             </tr>
                             `;
-
-
                         } else {
                             rankingBody.innerHTML += `
                                 <tr name="rank" class="row rank">
@@ -112,8 +111,6 @@ function buscarDados(filtro) {
                     rank[rank.length - 1].style = 'border-radius: 0 0 5px 5px'
 
                 })
-
-
                 .catch(function (erro) {
                     console.error(erro);
                 })
@@ -122,6 +119,8 @@ function buscarDados(filtro) {
             console.error(erro);
         })
 
+
+    // Trazendo dados dos insights ---------------------------------------------
     fetch("/usuarios/selectInsights", {
         headers: {
             "Content-Type": "application/json"
@@ -130,20 +129,22 @@ function buscarDados(filtro) {
         .then(function (resposta) {
             resposta.json()
                 .then(function (resposta) {
-                    console.log(resposta)
+                    console.log("Insights:", resposta)
 
                     var bikers = resposta[0].Bikers
                     var km = resposta[0].KM
                     var paises = resposta[0].Paises
 
                     insightBikers.innerHTML = bikers
-                    insightKM.innerHTML = km 
+                    insightKM.innerHTML = km
                     insightPais.innerHTML = paises
-
-
                 })
         })
+        .catch(function (erro) {
+            console.error(erro);
+        })
 }
+
 
 
 
