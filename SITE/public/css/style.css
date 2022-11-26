@@ -575,6 +575,7 @@ footer{
 
 .gallery-box > img{
     border-radius: 5px;
+    min-width: 300px;
     max-width: 100%;
     position: relative;
     bottom: 0;

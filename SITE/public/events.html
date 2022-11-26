@@ -100,7 +100,7 @@
         </div>
     </section>
 
-    <!--EVENTOS-LISTA-->
+    <!--EVENTOS-->
     <section id="events">
         <div class="find-event reveal">
             <h1>Encontre eventos por interesse</h1>
@@ -562,8 +562,8 @@
         <div class="content-topics">
             <div class="topic">
                 <h1>RECURSOS</h1>
-                <a href="#">Bikers Ranking</a>
-                <a href="#">Meus feitos</a>
+                <a href="ranking.html">Bikers Ranking</a>
+                <a href="conquest.html">Meus feitos</a>
                 <a href="gallery.html">Galeria</a>
             </div>
             <div class="topic">
@@ -622,7 +622,7 @@
                 eventContent.innerHTML += `<div class="event reveal">${listEvents[i].content}</div>`
             }
 
-        // Eventos por localidade    
+            // Eventos por localidade    
         } else if (modalSearch == '') {
 
             for (var i = 0; i < listEvents.length; i++) {
@@ -632,16 +632,16 @@
                 }
             }
 
-        // Eventos por modalidade  
+            // Eventos por modalidade  
         } else if (localSearch == '') {
-    
+
             for (var i = 0; i < listEvents.length; i++) {
                 if (modalSearch == listEvents[i].modal) {
                     eventContent.innerHTML += `<div class="event reveal">${listEvents[i].content}</div>`
                 }
             }
 
-        //Eventos por modalidade e país    
+            //Eventos por modalidade e país    
         } else {
             eventContent.innerHTML = ""
 
