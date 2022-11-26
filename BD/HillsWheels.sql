@@ -62,25 +62,16 @@ JOIN Modalidade as m ON fkModalidade = idModalidade
 GROUP BY m.nome;
 
 -- Quantidade de público por faixa etária
-SELECT COUNT(TIMESTAMPDIFF(YEAR, dtNasc, CURDATE())) AS '10-20 ANOS' FROM Biker
-WHERE YEAR(dtNasc) >= 2000 AND YEAR(dtNasc) <= 2010
-UNION
-SELECT COUNT(TIMESTAMPDIFF(YEAR, dtNasc, CURDATE())) AS '20-30 ANOS' FROM Biker
-WHERE YEAR(dtNasc) >= 1990 AND YEAR(dtNasc) <= 2000
-UNION
-SELECT COUNT(TIMESTAMPDIFF(YEAR, dtNasc, CURDATE())) AS '30-40 ANOS' FROM Biker
-WHERE YEAR(dtNasc) >= 1980 AND YEAR(dtNasc) <= 1990
-UNION
-SELECT COUNT(TIMESTAMPDIFF(YEAR, dtNasc, CURDATE())) AS '40-50 ANOS' FROM Biker
-WHERE YEAR(dtNasc) >= 1970 AND YEAR(dtNasc) <= 1980
-UNION
-SELECT COUNT(TIMESTAMPDIFF(YEAR, dtNasc, CURDATE())) AS '50-60 ANOS' FROM Biker
-WHERE YEAR(dtNasc) >= 1960 AND YEAR(dtNasc) <= 1970
-UNION
-SELECT COUNT(TIMESTAMPDIFF(YEAR, dtNasc, CURDATE())) AS '60-70 ANOS' FROM Biker
-WHERE YEAR(dtNasc) >= 1950 AND YEAR(dtNasc) <= 1960;
+SELECT COUNT(TIMESTAMPDIFF(YEAR, dtNasc, CURDATE())) AS '10-20 ANOS' FROM Biker;
 
-
+SELECT 
+IF(YEAR(dtNasc) >= 2000, '10-20',  IF(YEAR(dtNasc) >= 1990, '20-30', 
+IF(YEAR(dtNasc) >= 1980, '30-40', 
+IF(YEAR(dtNasc) >= 1970, '40-50', 
+IF(YEAR(dtNasc) >= 1960, '50-60', 
+IF(YEAR(dtNasc) >= 1950, '60-70', 0)))))) "Faixa Etária", nome 
+FROM Biker
+ORDER BY dtNasc;
 
 
 
