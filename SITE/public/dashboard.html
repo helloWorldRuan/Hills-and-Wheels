@@ -55,7 +55,7 @@
 
     <!-- SECTIONS CONTENT -->
     <div class="containerAll">
-        
+
         <!-- INSIGHTS -->
         <section id="contentInsight">
             <div class="contain">
@@ -141,10 +141,11 @@
     </div>
 
 </body>
+
 </html>
 
 <script>
-    
+
     // Carrega aleatoriamente a imagem do atleta que compõe os insights
     var n = parseInt(1 + Math.random() * 5)
     var img = ""
@@ -174,6 +175,7 @@
 </script>
 
 <script>
+
     // Gráfico de público por gênero ----------------------------------------------
     fetch("/usuarios/selectPublicGender", {
         header: {
@@ -289,17 +291,36 @@
                 .then(function (resposta) {
                     console.log("Gráfico Idade:", resposta)
 
-                    var data = []
+                    var age2000 = 0
+                    var age1990 = 0
+                    var age1980 = 0
+                    var age1970 = 0
+                    var age1960 = 0
+                    var age1950 = 0
 
                     for (var i = 0; i < resposta.length; i++) {
-                        data.push(resposta[i].idade)
+                        if (resposta[i].age == "10-20") {
+                            age2000++
+                        } else if (resposta[i].age == "20-30") {
+                            age1990++
+                        } else if (resposta[i].age == "30-40") {
+                            age1980++
+                        } else if (resposta[i].age == "40-50") {
+                            age1970++
+                        } else if (resposta[i].age == "50-60") {
+                            age1960++
+                        } else if (resposta[i].age == "60-70") {
+                            age1950++
+                        }
                     }
+
+                    data = [age2000, age1990, age1980, age1970, age1960, age1950]
 
                     plotarChartAge(data)
 
                 })
         })
-    
+
     function plotarChartAge(data) {
 
         const labelsAge = [
@@ -313,7 +334,7 @@
         const dataAge = {
             labels: labelsAge,
             datasets: [{
-                label: 'Público por idade (Anos)',
+                label: 'Público por faixa etária',
                 backgroundColor: ['#FF2C18', '#5404FF'],
                 borderColor: '#171717',
                 data: data,
