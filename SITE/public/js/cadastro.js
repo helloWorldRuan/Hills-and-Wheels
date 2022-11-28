@@ -23,7 +23,7 @@ function cadastrar() {
     var idConquista
 
     // Validação dos campos
-    var invalidInput = !Biker.nomeServer || !Biker.genderSever || !Biker.dateServer || !Biker.paisServer || !Biker.modalServer || !Conquista.bikeServer || !Conquista.aroServer || !Conquista.msgServer || !Conquista.distanceServer || !Conquista.jumpServer || !Conquista.speedServer || !Conquista.champServer || !Conquista.medalServer || !Conquista.winServer
+    var invalidInput = !Biker.nomeServer || !Biker.genderServer || !Biker.dateServer || !Biker.paisServer || !Biker.modalServer || !Conquista.bikeServer || !Conquista.aroServer || !Conquista.msgServer || !Conquista.distanceServer || !Conquista.jumpServer || !Conquista.speedServer || !Conquista.champServer || !Conquista.medalServer || !Conquista.winServer
 
     if (invalidInput) {
         alert('Preencha todos os campos!')
@@ -64,6 +64,8 @@ function cadastrar() {
                 }).catch()
 
             alert('Cadastro realizado com sucesso!')
+
+            window.location.href = "ranking.html"
 
         } else {
             throw ("Houve um erro ao tentar realizar o cadastro!");

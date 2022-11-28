@@ -132,8 +132,43 @@ function buscarDados(filtro) {
                     console.log("Insights:", resposta)
 
                     var bikers = resposta[0].Bikers
-                    var km = resposta[0].KM
                     var paises = resposta[0].Paises
+                    var km = Number(resposta[0].KM)
+
+                    console.log(km)
+
+                    km = String(km)
+
+                    // Abreviando casas decimais
+                    if (km.length > 6) {
+                        if (km.slice(1, 2) > 0) {
+                            km = km.slice(0, 1) + "." + km.slice(1, 2) + "M"
+                        }
+
+                        km = km.slice(0, 1) + "M"
+
+                    } else if (km.length > 5) {
+                        if (km.slice(3, 4) > 0) {
+                            km = km.slice(0, 3) + "." + km.slice(3, 4) + "M"
+                        }
+
+                        km = km.slice(0, 3) + "K"
+
+                    } else if (km.length > 4) {
+                        if (km.slice(2, 3) > 0) {
+                            km = km.slice(0, 2) + "." + km.slice(2, 3) + "K"
+                        }
+
+                        km = km.slice(0, 2) + "K"
+
+                    } else if (km.length > 3) {
+                        if (km.slice(1, 2) > 0) {
+                            km = km.slice(0, 1) + "." + km.slice(1, 2) + "K"
+                        }
+
+                        km = km.slice(0, 1) + "K"
+
+                    }
 
                     insightBikers.innerHTML = bikers
                     insightKM.innerHTML = km

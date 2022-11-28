@@ -87,19 +87,19 @@ body {
 .topic .activebar {
     width: 40%;
     height: 3px;
-    top: 2.3rem;
+    top: 2rem;
     background-color: var(--yellow);
 }
 
 .topic.active {
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--yellow);
 }
 
 .active:hover {
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .active:hover .linebar {
