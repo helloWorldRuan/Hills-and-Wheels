@@ -119,7 +119,6 @@ function buscarDados(filtro) {
             console.error(erro);
         })
 
-
     // Trazendo dados dos insights ---------------------------------------------
     fetch("/usuarios/selectInsights", {
         headers: {
